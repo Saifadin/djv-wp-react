@@ -63,7 +63,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    axios.get('http://djv-hilfe.de/wp-json/wp-api-menus/v2/menus/6').then(res => console.log(res.data))
+    axios.get('https://djv-hilfe.de/wp-json/wp-api-menus/v2/menus/6').then(res => console.log(res.data))
   }
 
   componentDidMount() {
