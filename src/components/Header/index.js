@@ -1,30 +1,58 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
+import HeaderDonationButton from '../HeaderDonationButton'
 import headerStyles from './Header.scss'
 
-const Header = ({ title }) => {
-  const navList = [
-    { key: '12345', link: '/projekte', title: 'Projekte' },
-    { key: '12346', link: '/ziele', title: 'Ziele' },
-    { key: '12347', link: '/ueber-uns', title: 'Über Uns' },
-  ]
+class Header extends Component {
+  constructor() {
+    super()
 
-  return (
-    <header className={headerStyles.wrapper}>
-      <div className={headerStyles.header}>
-        <div className={headerStyles.menu}>
+    this.state = {
+      mobileMenuHidden: true
+    }
+
+    this.openMenu = this.openMenu.bind(this)
+    this.closeMenu = this.closeMenu.bind(this)
+  }
+
+  openMenu() {
+    this.setState({
+      mobileMenuHidden: false
+    })
+    document.getElementsByTagName('body')[0].classList.add('mobileNavOpen')
+  }
+
+  closeMenu() {
+    this.setState({
+      mobileMenuHidden: true
+    })
+    document.getElementsByTagName('body')[0].classList.remove('mobileNavOpen')
+  }
+
+  render() {
+    const navList = [
+      { key: '12345', link: '/projekte', title: 'Projekte' },
+      { key: '12346', link: '/ziele', title: 'Ziele' },
+      { key: '12347', link: '/ueber-uns', title: 'Über Uns' },
+    ]
+  
+    return (
+      <header className={headerStyles.wrapper}>
+        <div className={headerStyles.header}>
           <Link to='/' className={headerStyles.logoLink}>
             <img src='/Logo.png' alt='DJV Logo' className={headerStyles.logo} />
           </Link>
-          { navList.map((item) => <Link key={item.key} to={item.link} className={headerStyles.menuItem}>{item.title}</Link>) }
+          <div className={['fa fa-bars fa-2x', headerStyles.menuIcon].join(' ')} onClick={this.openMenu} />
+          <div className={this.state.mobileMenuHidden ? headerStyles.menu : headerStyles.mobileMenu}>
+            <i className={['fa fa-times fa-2x', headerStyles.closeButton].join(' ')} onClick={this.closeMenu} />
+            { navList.map((item) => <Link key={item.key} to={item.link} className={headerStyles.menuItem}>{item.title}</Link>) }
+          </div>
+          <HeaderDonationButton />
         </div>
-        <div className={headerStyles.donationButton}>
-          <span>Jetzt Spenden</span>
-        </div>
-      </div>
-    </header>
-  )
+      </header>
+    )
+  }
 }
 
 export default Header

@@ -1,11 +1,17 @@
 import React from 'react';
 
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 import PageSection from '../../components/PageSection'
 import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll'
 import homeStyles from './Home.scss'
 
 const Home = () => {
+  // const client = {
+  //   sandbox:    'Acc2aBUCwn82avsCrrPF_nn7A28nUgVwKrRwMJDQZRz6MmEAGCVYq4f4Ar3Hc3NaDerI5pTZPLOsSzUX',
+  //   production: 'YOUR-PRODUCTION-APP-ID',
+  // }
+
   return (
     <div className={homeStyles.home}>
       <section className={homeStyles.headSection}>
@@ -47,6 +53,7 @@ const Home = () => {
 
       </PageSection>
       <PageSection title='Projekte'></PageSection>
+      <Footer />
     </div>
   );
 };

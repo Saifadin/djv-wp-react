@@ -20,7 +20,7 @@
 }
 
 .heading {
-  composes: h2 from '../../index.css';
+  composes: h2 from '../../index.scss';
   margin: 0;
   margin-bottom: 80px;
 }

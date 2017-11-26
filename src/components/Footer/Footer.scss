@@ -1,0 +1,19 @@
+.footer {
+  box-sizing: border-box;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  padding: 16px;
+}
+
+.headline {
+  composes: h2 from '../../index.scss';
+  color: black;
+  margin: 0 0 84px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
-// import axios from 'axios'
+import axios from 'axios'
 
 import Project from './components/Project/Project'
 import PageSection from './components/PageSection'
@@ -63,7 +63,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    // axios.get('http://djv-hilfe.de/wp-json/wp-api-menus/v2/menus/6').then(res => console.log(res.data))
+    axios.get('http://djv-hilfe.de/wp-json/wp-api-menus/v2/menus/6').then(res => console.log(res.data))
   }
 
   componentDidMount() {
