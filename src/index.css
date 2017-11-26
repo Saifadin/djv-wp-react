@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Metropolis';
+  font-weight: 400;
+  src: url('/fonts/Metropolis-Regular.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Metropolis-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Metropolis-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Metropolis-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Metropolis-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-weight: 600;
+  src: url('/fonts/Metropolis-Bold.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Metropolis-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Metropolis-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Metropolis-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Metropolis-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  font-weight: 800;
+  src: url('/fonts/Metropolis-Black.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Metropolis-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Metropolis-Black.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Metropolis-Black.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Metropolis-Black.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Metropolis', sans-serif !important;
+  background: url('/assets/rauch-render.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: 100%;
+  background-color: #fafafa;
+  min-height: 5000px;
+  overflow-x: hidden;
+}
+
+:global(.control-panel) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 320px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 12px 24px;
+  margin: 20px;
+  font-size: 13px;
+  line-height: 2;
+  color: #6b6b76;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.h1 {
+  font-size: 76px;
+  line-height: 100px;
+  text-transform: uppercase;
+  color: #ff6666;
+  margin: 0;
+}
+
+.h2 {
+  font-size: 56px;
+  line-height: 58px;
+  text-transform: uppercase;
+  color: #ff6666;
+}
+
+label {
+  display: inline-block;
+  width: 160px;
+}
+
+input {
+  margin-left: 20px;
+  max-width: 60px;
+}
