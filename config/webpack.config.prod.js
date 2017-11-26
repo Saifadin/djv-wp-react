@@ -177,8 +177,7 @@ module.exports = {
                       options: {
                         importLoaders: 1,
                         modules: true,
-                        minimize: true,
-                        sourceMap: true,
+                        localIdentName: "[name]__[local]___[hash:base64:5]"
                       },
                     },
                     {
@@ -207,6 +206,22 @@ module.exports = {
               )
             ),
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
+          {
+            test: /\.scss$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  modules: true,
+                  sourceMap: true,
+                  importLoaders: 2,
+                  localIdentName: "[name]__[local]___[hash:base64:5]"
+                },
+              },
+              require.resolve('sass-loader')
+            ],
           },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
