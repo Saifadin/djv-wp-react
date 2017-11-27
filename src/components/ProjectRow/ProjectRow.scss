@@ -1,0 +1,19 @@
+.wrapper {
+  composes: row from global;
+  margin-bottom: 96px;
+}
+
+.title {
+  composes: h3 from '../../index.scss';
+  margin-bottom: 52px;
+  color: #000000;
+}
+
+.projectWrapper {
+  display: flex;
+  justify-content: center;
+  @media (min-width: 712px) {
+    justify-content: space-between;
+  }
+  flex-wrap: wrap;
+}

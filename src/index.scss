@@ -10,6 +10,16 @@
 
 @font-face {
   font-family: 'Metropolis';
+  font-weight: 500;
+  src: url('/fonts/Metropolis-SemiBold.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Metropolis-SemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Metropolis-SemiBold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Metropolis-SemiBold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Metropolis-SemiBold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Metropolis';
   font-weight: 600;
   src: url('/fonts/Metropolis-Bold.eot'); /* IE9 Compat Modes */
   src: url('/fonts/Metropolis-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -40,6 +50,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Remove scroll on the body when react-modal is open */
+:global(.ReactModal__Body--open) {
+  overflow: hidden;
+}
+
 :global(.control-panel) {
   position: absolute;
   top: 0;
@@ -65,10 +80,12 @@ body {
     font-size: 48px;
     line-height: 60px;
   }
+  display: block;
   font-size: 64px;
   line-height: 77px;
+  font-weight: 800;
   text-transform: uppercase;
-  color: #ff6666;
+  color: #ff5555;
   margin: 0;
 }
 
@@ -81,10 +98,13 @@ body {
     font-size: 48px;
     line-height: 60px;
   }
+  display: block;
   font-size: 64px;
   line-height: 77px;
+  font-weight: 800;
   text-transform: uppercase;
-  color: #ff6666;
+  color: #ff5555;
+  margin: 0;
 }
 
 .h3 {
@@ -96,10 +116,48 @@ body {
     font-size: 32px;
     line-height: 40px;
   }
+  display: block;
   font-size: 42px;
   line-height: 50px;
+  font-weight: 800;
   text-transform: uppercase;
-  color: #ff6666;
+  color: #ff5555;
+  margin: 0;
+}
+
+.h4 {
+  display: block;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subHeadline {
+  display: block;
+  font-size: 19px;
+  line-height: 23px;
+  font-weight: 500;
+}
+
+:global(.paragraph) {
+  font-size: 15px;
+  line-height: 27px;
+  margin-bottom: 24px;
+}
+
+:global(.paragraphUI) {
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 24px;
+}
+
+:global(.row) {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 :global(.mobileNavOpen) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 
-import Project from './components/Project/Project'
+import Project from './components/ProjectCategory'
 import PageSection from './components/PageSection'
 
 import Home from './views/Home'
@@ -63,7 +63,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    axios.get('https://djv-hilfe.de/wp-json/wp-api-menus/v2/menus/6').then(res => console.log(res.data))
+    // axios.get('https://djv-hilfe.de/wp-json/wp-api-menus/v2/menus/6').then(res => console.log(res.data))
   }
 
   componentDidMount() {

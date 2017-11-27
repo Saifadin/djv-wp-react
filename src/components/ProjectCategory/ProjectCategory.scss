@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  @media (min-width: 432px) {
+    min-width: 200px;
+  }
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.sizeWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 140px;
+  text-align: center;
+  align-items: center;
+}
+
+.iconWrapper {
+  background-color: white;
+  border-radius: 100%;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  composes: subHeadline from '../../index.scss';
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+}

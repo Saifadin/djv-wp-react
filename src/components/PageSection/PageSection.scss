@@ -13,9 +13,7 @@
 
 .grid {
   composes: section;
-  max-width: 960px;
-  width: 100%;
-  margin: 0 auto;
+  composes: row from global;
   padding: 240px 16px 0;
 }
 
