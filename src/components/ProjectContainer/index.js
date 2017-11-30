@@ -31,7 +31,6 @@ class ProjectContainer extends Component {
       }
       return preparedProject;
     })
-    console.log(projects)
     this.setState({
       projects: projects
     })

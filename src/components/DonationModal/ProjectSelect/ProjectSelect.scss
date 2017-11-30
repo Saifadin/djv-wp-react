@@ -1,0 +1,31 @@
+.wrapper {
+  flex: 1;
+  margin: 0 16px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio {
+  display: none;
+  &:checked {
+    + .box {
+      background-color: #ff5555;
+    }
+  }
+}
+
+.box {
+  composes: subHeadline from '../../../index.scss';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(#ff5555, .5);
+  color: white;
+  width: 200px;
+  height: 60px;
+  cursor: pointer;
+  &:hover {
+    background-color: #ff5555;
+  }
+}

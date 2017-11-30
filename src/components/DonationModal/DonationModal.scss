@@ -45,6 +45,10 @@
 
 .wrapper {
   composes: row from global;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .headline {
@@ -57,47 +61,26 @@
   margin-bottom: 32px;
 }
 
-.select {
-  width: 100%;
-  height: 52px;
-  font-family: 'Metropolis';
-  font-size: 16px;
-  line-height: 40px;
-  font-weight: 600;
-  background: none;
-  border: 4px solid #ff5555;
-  border-right: none;
-  border-radius: 2px;
-  margin-bottom: 32px;
-  outline: none;
-  padding: 0 16px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+.projects {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  background-image:
-    linear-gradient(45deg, transparent 50%, white 50%),
-    linear-gradient(135deg, white 50%, transparent 50%),
-    linear-gradient(to right, #ff5555, #ff5555);
-  background-position:
-    calc(100% - 26px) calc(16px + 2px),
-    calc(100% - 18px) calc(16px + 2px),
-    100% 0;
-  background-size:
-    8px 8px,
-    8px 8px,
-    52px 52px;
-  background-repeat: no-repeat;
-
-  &:focus {
-    background-image:
-      linear-gradient(45deg, white 50%, transparent 50%),
-      linear-gradient(135deg, transparent 50%, white 50%),
-      linear-gradient(to right, gray, gray);
-    background-position:
-      calc(100% - 18px) 16px,
-      calc(100% - 26px) 16px,
-      100% 0;
-    border-color: grey;
-    outline: 0;
+.button {
+  display: block;
+  background-color: transparent;
+  width: 250px;
+  border: 6px solid #ff5555;
+  height: 60px;
+  cursor: pointer;
+  transition: all 1s linear;
+  color: #ff5555;
+  font-size: 19px;
+  &:hover {
+    background-color: rgba(#ff5555, .5);
   }
 }
