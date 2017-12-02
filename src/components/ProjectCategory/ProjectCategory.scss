@@ -26,6 +26,10 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 16px;
+  transition: all .5s linear;
+  &:hover {
+    background-color: rgba(#ff5555, .3);
+  } 
 }
 
 .title {

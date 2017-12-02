@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import HeaderDonationButton from '../HeaderDonationButton'
@@ -33,8 +33,8 @@ class Header extends Component {
   render() {
     const navList = [
       { key: '12345', link: '/projekte', title: 'Projekte' },
-      { key: '12346', link: '/ziele', title: 'Ziele' },
       { key: '12347', link: '/ueber-uns', title: 'Über Uns' },
+      { key: '12346', link: '/ziele', title: 'Ziele' },
     ]
   
     return (

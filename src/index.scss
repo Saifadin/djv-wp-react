@@ -160,6 +160,12 @@ body {
   box-sizing: border-box;
 }
 
+:global(.textRow) {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
 :global(.mobileNavOpen) {
   overflow: hidden;
 }

@@ -26,7 +26,7 @@ const Home = () => {
         <Header />
       </FixedHeaderAfterScroll>
       <PageSection title='Über Uns'>
-        <div className={homeStyles.text}>
+        <div className='textRow'>
           <p className='paragraph'>
             Der Deutsch-jemenitische Verein für Hilfe und Entwicklung ist ein ehrenamtlicher Gesellschaftsverein, 
             der 2013 offiziell in Deutschland gegründet wurde.
@@ -38,7 +38,7 @@ const Home = () => {
         </div>
       </PageSection>
       <PageSection title='Ziele'>
-        <div className={homeStyles.text}>
+        <div className='textRow'>
           <p className='paragraph'>
             Die Minderung der schwierigen Umstände der jemenitischen Bevölkerung, sowie die Zusicherung der 
             humanitären Hilfen in allen Teilen des Jemens ist unsere Priorität.

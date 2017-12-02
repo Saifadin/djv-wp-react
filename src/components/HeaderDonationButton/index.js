@@ -13,21 +13,28 @@ class HeaderDonationButton extends Component {
 
     this.openDonationModal = this.openDonationModal.bind(this)
     this.closeDonationModal = this.closeDonationModal.bind(this)
+    this.scrollHandler = this.scrollHandler.bind(this)
   }
   
   componentWillMount() {
-    document.addEventListener('scroll', (e) => {
-      const bodyScrollHeight = e.target.scrollingElement.scrollTop
-      if (window.innerWidth < 601 && bodyScrollHeight < 600) {
-        this.setState({
-          isVisible: false
-        })
-      } else {
-        this.setState({
-          isVisible: true
-        })
-      }
-    })
+    document.addEventListener('scroll', this.scrollHandler)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.scrollHandler)
+  }
+
+  scrollHandler(e) {
+    const bodyScrollHeight = e.target.scrollingElement.scrollTop
+    if (window.innerWidth < 601 && bodyScrollHeight < 600) {
+      this.setState({
+        isVisible: false
+      })
+    } else {
+      this.setState({
+        isVisible: true
+      })
+    }
   }
 
   openDonationModal() {

@@ -38,7 +38,7 @@ class ProjectContainer extends Component {
   
   render() {
     return (
-      <ProjectRow title={this.props.title} projects={this.state.projects} maxCount={this.props.maxCount} />
+      this.state.projects.length > 0 && <ProjectRow title={this.props.title} projects={this.state.projects} maxCount={this.props.maxCount} />
     )
   }
 }

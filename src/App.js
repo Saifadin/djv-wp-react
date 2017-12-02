@@ -6,12 +6,8 @@ import Project from './components/ProjectCategory'
 import PageSection from './components/PageSection'
 
 import Home from './views/Home'
-
-const About = () => (
-  <PageSection>
-    <h2>About</h2>
-  </PageSection>
-)
+import Projects from './views/Projects'
+import AboutUs from './views/AboutUs'
 
 const Topics = ({ match }) => (
   <PageSection>
@@ -96,8 +92,9 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/ueber-uns" component={About}/>
-          <Route path="/kontakt" component={Topics}/>
+          <Route path="/projekte" component={Projects}/>
+          <Route path="/ueber-uns" component={AboutUs}/>
+          <Route path="/ziele" component={Topics}/>
         </Switch>
       </div>
     )

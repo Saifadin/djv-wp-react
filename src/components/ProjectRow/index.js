@@ -15,7 +15,7 @@ const ProjectRow = ({ title, projects, maxCount }) => (
         }
       })}
     </div>
-  </div>
+  </div> 
 )
 
 export default ProjectRow
