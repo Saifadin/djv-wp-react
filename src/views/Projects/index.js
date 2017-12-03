@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Header from '../../components/Header'
 import PageHeader from '../../components/PageHeader'
 import PageSection from '../../components/PageSection'
-import Footer from '../../components/Footer'
 import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll'
 
 class Projects extends Component {
@@ -14,7 +13,7 @@ class Projects extends Component {
         <FixedHeaderAfterScroll>
           <Header />
         </FixedHeaderAfterScroll>
-        <PageSection title='Über Uns'>
+        <PageSection fullWidth={true} title='Über Uns'>
           <div className='textRow'>
             <p className='paragraph'>
               Der Deutsch-jemenitische Verein für Hilfe und Entwicklung ist ein ehrenamtlicher Gesellschaftsverein, 
@@ -26,7 +25,6 @@ class Projects extends Component {
             </p>
           </div>
         </PageSection>
-        <Footer />
       </div>
     )
   }

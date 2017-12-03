@@ -4,6 +4,7 @@ import { Switch, Route, Link } from 'react-router-dom'
 
 import Project from './components/ProjectCategory'
 import PageSection from './components/PageSection'
+import Footer from './components/Footer'
 
 import Home from './views/Home'
 import Projects from './views/Projects'
@@ -96,6 +97,7 @@ class App extends Component {
           <Route path="/ueber-uns" component={AboutUs}/>
           <Route path="/ziele" component={Topics}/>
         </Switch>
+        <Footer />
       </div>
     )
   }

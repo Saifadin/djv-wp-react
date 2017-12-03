@@ -2,6 +2,7 @@
   min-height: calc(100vh - 72px);
   box-sizing: border-box;
   display: block;
+  position: relative;
 }
 
 .fullWidth {
@@ -14,11 +15,56 @@
 .grid {
   composes: section;
   composes: row from global;
-  padding: 240px 16px 0;
+  padding: 120px 16px;
 }
 
 .heading {
   composes: h2 from '../../index.scss';
   margin: 0;
   margin-bottom: 80px;
+}
+
+.bgImageWrapper {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  max-height: calc(100% - 225px);
+  width: 100%;
+  overflow: hidden;
+}
+
+.bgImageLeft {
+  composes: bgImageWrapper;
+  left: 0;
+  @media (min-width: 960px) {
+    left: calc((100% - 960px) / 2);
+  }
+}
+
+.bgImageRight {
+  composes: bgImageWrapper;
+  right: 0;
+  @media (min-width: 960px) {
+    right: calc((100% - 960px) / 2);
+  }
+}
+
+.bgOverlay {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(white, .65);
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+
 }

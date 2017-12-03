@@ -73,19 +73,3 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
-.button {
-  display: block;
-  background-color: transparent;
-  width: 250px;
-  border: 6px solid #ff5555;
-  height: 60px;
-  cursor: pointer;
-  transition: all 1s linear;
-  color: #ff5555;
-  font-size: 19px;
-  &:hover {
-    background-color: rgba(#ff5555, .2);
-    
-  }
-}

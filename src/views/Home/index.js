@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import PageSection from '../../components/PageSection'
 import ProjectCategory from '../../components/ProjectCategory'
 import ProjectContainer from '../../components/ProjectContainer'
@@ -25,7 +24,7 @@ const Home = () => {
       <FixedHeaderAfterScroll>
         <Header />
       </FixedHeaderAfterScroll>
-      <PageSection title='Über Uns'>
+      <PageSection fullWidth={true} bgImage='/assets/oldcity.jpg' title='Über Uns'>
         <div className='textRow'>
           <p className='paragraph'>
             Der Deutsch-jemenitische Verein für Hilfe und Entwicklung ist ein ehrenamtlicher Gesellschaftsverein, 
@@ -37,7 +36,7 @@ const Home = () => {
           </p>
         </div>
       </PageSection>
-      <PageSection title='Ziele'>
+      <PageSection fullWidth={true} bgImage='/assets/kinder-jemen.jpg' bgImagePosition='right' title='Ziele'>
         <div className='textRow'>
           <p className='paragraph'>
             Die Minderung der schwierigen Umstände der jemenitischen Bevölkerung, sowie die Zusicherung der 
@@ -61,7 +60,6 @@ const Home = () => {
         <ProjectContainer title='Aktive Projekte' maxCount={4} category='aktiv' />
         <ProjectContainer title='Permanente Projekte' maxCount={4} category='permanent' />
       </PageSection>
-      <Footer />
     </div>
   );
 };

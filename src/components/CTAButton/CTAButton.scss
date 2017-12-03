@@ -1,0 +1,19 @@
+.button {
+  composes: h4 from '../../index.scss';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: transparent;
+  width: 250px;
+  border: 6px solid #ff5555;
+  height: 60px;
+  cursor: pointer;
+  transition: all 1s linear;
+  color: #ff5555;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(#ff5555, .2);
+  }
+}

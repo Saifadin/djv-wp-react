@@ -30,6 +30,10 @@ class Header extends Component {
     document.getElementsByTagName('body')[0].classList.remove('mobileNavOpen')
   }
 
+  componentWillUnmount() {
+    document.getElementsByTagName('body')[0].classList.remove('mobileNavOpen')
+  }
+
   render() {
     const navList = [
       { key: '12345', link: '/projekte', title: 'Projekte' },

@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 import axios from 'axios'
 
 import ProjectSelect from './ProjectSelect'
+import CTAButton from '../CTAButton'
 import donationModalStyles from './DonationModal.scss'
 
 class DonationModal extends Component {
@@ -101,7 +102,7 @@ class DonationModal extends Component {
             }) }
           </div>
           <h3 className={donationModalStyles.stepHeadline}>2. Über Paypal spenden: </h3>
-          <button className={donationModalStyles.button} href={donationUrl}>Jetzt Spenden</button>
+          <CTAButton url={donationUrl} title='Jetzt Spenden' />
         </div>
       </Modal>
     )
