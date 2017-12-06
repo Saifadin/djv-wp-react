@@ -1,0 +1,15 @@
+.renderedContent {
+  composes: textRow from global;
+  p {
+    font-size: 15px;
+    line-height: 27px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+}
+
+.goBack {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 32px;
+}

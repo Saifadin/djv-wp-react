@@ -48,6 +48,7 @@ body {
   background-position-y: 100%;
   background-color: #fafafa;
   overflow-x: hidden;
+  hyphens: auto;
 }
 
 /* Remove scroll on the body when react-modal is open */

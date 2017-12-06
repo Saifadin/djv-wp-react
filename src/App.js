@@ -1,42 +1,27 @@
 import React, { Component } from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 // import axios from 'axios'
 
-import Project from './components/ProjectCategory'
-import PageSection from './components/PageSection'
 import Footer from './components/Footer'
 
 import Home from './views/Home'
 import Projects from './views/Projects'
+import Project from './views/Project'
 import AboutUs from './views/AboutUs'
 
-const Topics = ({ match }) => (
-  <PageSection>
-    <h2>Topics</h2>
-    <ul>
-      <li>
-        <Link to={`${match.url}/rendering`}>
-          Rendering with React
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/components`}>
-          Components
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/props-v-state`}>
-          Props v. State
-        </Link>
-      </li>
-    </ul>
+class ScrollToTop extends Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0)
+    }
+  }
 
-    <Route path={`${match.url}/:topicId`} component={Project}/>
-    <Route exact path={match.url} render={() => (
-      <h3>Please select a topic.</h3>
-    )}/>
-  </PageSection>
-)
+  render() {
+    return this.props.children
+  }
+}
+
+withRouter(ScrollToTop)
 
 class App extends Component {
 
@@ -92,10 +77,12 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route path="/projekte" component={Projects}/>
-          <Route path="/ueber-uns" component={AboutUs}/>
-          <Route path="/ziele" component={Topics}/>
+          <ScrollToTop>
+            <Route exact path="/" component={Home}/>
+            <Route path="/projekte" component={Projects}/>
+            <Route path="/ueber-uns" component={AboutUs}/>
+            <Route path="/projekt/:id" component={Project}/>
+          </ScrollToTop>
         </Switch>
         <Footer />
       </div>

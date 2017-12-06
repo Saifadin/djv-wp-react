@@ -4,6 +4,7 @@ import Header from '../../components/Header'
 import PageSection from '../../components/PageSection'
 import ProjectCategory from '../../components/ProjectCategory'
 import ProjectContainer from '../../components/ProjectContainer'
+import CTAButton from '../../components/CTAButton'
 import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll'
 import homeStyles from './Home.scss'
 
@@ -35,6 +36,7 @@ const Home = () => {
             zu etablieren.
           </p>
         </div>
+        <CTAButton title='Mehr Über Uns' url='/ueber-uns' />
       </PageSection>
       <PageSection fullWidth={true} bgImage='/assets/kinder-jemen.jpg' bgImagePosition='right' title='Ziele'>
         <div className='textRow'>

@@ -5,7 +5,7 @@ import ProjectTeaser from './ProjectTeaser'
 
 const ProjectRow = ({ title, projects, maxCount }) => (
   <div className={projectRowStyles.wrapper}>
-    <h3 className={projectRowStyles.title}>{title}</h3>
+    { title && <h3 className={projectRowStyles.title}>{title}</h3> }
     <div className={projectRowStyles.projectWrapper}>
       {projects.map((project, index) => {
         if (maxCount) {

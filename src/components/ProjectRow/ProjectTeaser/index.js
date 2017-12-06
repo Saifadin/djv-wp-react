@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import projectTeaserStyles from './ProjectTeaser.scss'
 
 const ProjectTeaser = ({ project }) => (
-  <div className={projectTeaserStyles.wrapper}>
+  <Link to={`/projekt/${project.id}`} className={projectTeaserStyles.wrapper}>
     <div className={projectTeaserStyles.bgImage}>
       <img className={projectTeaserStyles.image} src={project.bgImage} alt={project.title} />
     </div>
@@ -11,7 +12,7 @@ const ProjectTeaser = ({ project }) => (
       <h4 className={projectTeaserStyles.title}>{project.title}</h4>
       <span className={projectTeaserStyles.description}>{project.description}</span>
     </div>
-  </div>
+  </Link>
 )
 
 export default ProjectTeaser

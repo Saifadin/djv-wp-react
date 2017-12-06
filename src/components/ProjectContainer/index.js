@@ -25,6 +25,7 @@ class ProjectContainer extends Component {
       const strippedExcerpt = stripDiv.textContent || stripDiv.innerText || ''
 
       let preparedProject = {
+        id: project.id,
         title: project.title.rendered,
         bgImage: project.better_featured_image ? project.better_featured_image.source_url : '/assets/yemen-topo.png',
         description: strippedExcerpt,

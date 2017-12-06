@@ -38,7 +38,7 @@ class Header extends Component {
     const navList = [
       { key: '12345', link: '/projekte', title: 'Projekte' },
       { key: '12347', link: '/ueber-uns', title: 'Über Uns' },
-      { key: '12346', link: '/ziele', title: 'Ziele' },
+      // { key: '12346', link: '/ziele', title: 'Ziele' },
     ]
   
     return (

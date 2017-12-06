@@ -1,0 +1,14 @@
+.projectCategories {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  & > * {
+    @media (max-width: 831px) {
+      width: 50%;
+    }
+    @media (min-width: 832px) {
+      width: 25%;
+    }
+  }
+}
