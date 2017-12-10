@@ -17,3 +17,17 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.copyright {
+  display: block;
+  text-align: center;
+}
+
+.copyrightLink {
+  text-decoration: none;
+  color: #ff5555;
+  transition: color .5s ease-in;
+  &:hover {
+    color: black;
+  }
+}

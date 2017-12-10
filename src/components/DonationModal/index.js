@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal'
 import axios from 'axios'
+import uniqId from 'uniqid'
 
 import ProjectSelect from './ProjectSelect'
 import CTAButton from '../CTAButton'
@@ -32,20 +33,16 @@ class DonationModal extends Component {
   handleOptionChange (changeEvent) {
     console.log(changeEvent.target.value)
     this.setState({
-      selectedOption: changeEvent.target.value
+      selectedDonation: changeEvent.target.value
     });
   }
 
   preparedProjects(wpData, id) {
     const projects = wpData.map((project) => {
-      const stripDiv = document.createElement('div')
-      stripDiv.innerHTML = project.excerpt.rendered
-      const strippedExcerpt = stripDiv.textContent || stripDiv.innerText || ''
 
       let preparedProject = {
+        id: project.id,
         title: project.title.rendered,
-        bgImage: project.better_featured_image ? project.better_featured_image.source_url : '/assets/yemen-topo.png',
-        description: strippedExcerpt,
       }
       return preparedProject;
     })
@@ -80,11 +77,11 @@ class DonationModal extends Component {
           <h2 className={donationModalStyles.headline}>In zwei Schritten spenden:</h2>
           <h3 className={donationModalStyles.stepHeadline}>1. Spendenzweck auswählen:</h3>
           <div className={donationModalStyles.projects}>
-            { this.state.activeProjects.map((project, index) => {
+            { this.state.activeProjects.map((project) => {
               return <ProjectSelect 
-                        key={index} 
-                        category='aktiv' 
-                        index={index} 
+                        key={uniqId()}
+                        category='aktiv'
+                        index={project.id}
                         project={project}
                         checked={this.state.selectedDonation === project.title} 
                         onChange={this.handleOptionChange}
@@ -92,7 +89,7 @@ class DonationModal extends Component {
             }) }
             { this.state.permaProjects.map((project, index) => {
               return <ProjectSelect 
-                        key={index} 
+                        key={uniqId()}
                         category='permanent' 
                         index={index} 
                         project={project}
@@ -101,8 +98,10 @@ class DonationModal extends Component {
                       />
             }) }
           </div>
-          <h3 className={donationModalStyles.stepHeadline}>2. Über Paypal spenden: </h3>
-          <CTAButton url={donationUrl} title='Jetzt Spenden' />
+          <div className={this.state.selectedDonation ? '' : donationModalStyles.disabled }>
+            <h3 className={donationModalStyles.stepHeadline}>2. Über Paypal spenden: </h3>
+            <CTAButton url={donationUrl} title='Jetzt Spenden' />
+          </div>
         </div>
       </Modal>
     )

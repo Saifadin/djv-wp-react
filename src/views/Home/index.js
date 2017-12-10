@@ -4,6 +4,7 @@ import Header from '../../components/Header'
 import PageSection from '../../components/PageSection'
 import ProjectCategory from '../../components/ProjectCategory'
 import ProjectContainer from '../../components/ProjectContainer'
+import BoardImageRow from '../../components/BoardImageRow'
 import CTAButton from '../../components/CTAButton'
 import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll'
 import homeStyles from './Home.scss'
@@ -26,6 +27,7 @@ const Home = () => {
         <Header />
       </FixedHeaderAfterScroll>
       <PageSection fullWidth={true} bgImage='/assets/oldcity.jpg' title='Über Uns'>
+        <BoardImageRow />
         <div className='textRow'>
           <p className='paragraph'>
             Der Deutsch-jemenitische Verein für Hilfe und Entwicklung ist ein ehrenamtlicher Gesellschaftsverein, 

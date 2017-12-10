@@ -47,12 +47,17 @@
 
 .wrapper {
   composes: row from global;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   width: 100%;
   flex: 1;
+  overflow: scroll;
+  padding-bottom: 16px;
+}
+
+.disabled {
+  transition: all .5s ease-in;
+  pointer-events:none;
+  opacity: 0.3;
 }
 
 .headline {

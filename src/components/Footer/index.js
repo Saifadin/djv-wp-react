@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import ContactElement from '../ContactElement'
 import footerStyles from './Footer.scss'
@@ -36,6 +37,7 @@ const Footer = () => {
           info@djv-hilfe.de
         </ContactElement>
       </div>
+      <span className={footerStyles.copyright}>© DJV e.V. 2017 | <Link to="/impressum" className={footerStyles.copyrightLink}>Impressum</Link></span>
     </footer>
   )
 }

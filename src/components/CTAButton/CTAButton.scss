@@ -3,14 +3,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding:24px;
   box-sizing: border-box;
   background-color: transparent;
   width: 250px;
   border: 6px solid #ff5555;
   height: 60px;
   cursor: pointer;
-  transition: all 1s linear;
+  transition: background 1s linear;
   color: #ff5555;
   text-decoration: none;
   margin: 16px auto;

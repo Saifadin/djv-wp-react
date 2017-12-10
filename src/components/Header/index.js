@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import uniqId from 'uniqid'
 
 import HeaderDonationButton from '../HeaderDonationButton'
 import headerStyles from './Header.scss'
@@ -36,8 +37,8 @@ class Header extends Component {
 
   render() {
     const navList = [
-      { key: '12345', link: '/projekte', title: 'Projekte' },
-      { key: '12347', link: '/ueber-uns', title: 'Über Uns' },
+      { link: '/projekte', title: 'Projekte' },
+      { link: '/ueber-uns', title: 'Über Uns' },
       // { key: '12346', link: '/ziele', title: 'Ziele' },
     ]
   
@@ -50,7 +51,7 @@ class Header extends Component {
           <div className={['fa fa-bars fa-2x', headerStyles.menuIcon].join(' ')} onClick={this.openMenu} />
           <div className={this.state.mobileMenuHidden ? headerStyles.menu : headerStyles.mobileMenu}>
             <i className={['fa fa-times fa-2x', headerStyles.closeButton].join(' ')} onClick={this.closeMenu} />
-            { navList.map((item) => <Link key={item.key} to={item.link} className={headerStyles.menuItem}>{item.title}</Link>) }
+            { navList.map((item) => <Link key={uniqId()} to={item.link} className={headerStyles.menuItem}>{item.title}</Link>) }
           </div>
           <HeaderDonationButton />
         </div>
