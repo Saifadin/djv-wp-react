@@ -65,7 +65,7 @@
 .projectCategories {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 150px;
+  margin-bottom: 80px;
   flex-wrap: wrap;
   & > * {
     @media (max-width: 831px) {

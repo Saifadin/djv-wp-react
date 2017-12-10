@@ -13,13 +13,19 @@ class Projects extends Component {
   render() {
     return (
       <div>
-        <PageHeader title="Projekte" bgImage="/assets/yemen-topo.png" />
+        <PageHeader title="Projekte" bgImage="/assets/shibam-yemen.jpg" />
 
         <FixedHeaderAfterScroll>
           <Header />
         </FixedHeaderAfterScroll>
 
-        <PageSection title='Kategorien'>
+        <PageSection title='Unsere Arbeit'>
+          <div className={projectStyles.projectCategories}>
+            <ProjectCategory title='Nahrungs-mittelhilfe' iconName='food' />
+            <ProjectCategory title='Erste-Hilfe-Kampagnen' iconName='aid' />
+            <ProjectCategory title='Medizinische Versorgung vor Ort' iconName='yemen' />
+            <ProjectCategory title='Waisen-patenschaften' iconName='orphan' />
+          </div>
           <div className='textRow'>
             <p className='paragraph'>
               Seit 2013 bemüht sich der DJV e.V. darum, die Lage der jemenitischen Bevölkerung in Kriegszeiten zu verbessern. Dies wird
@@ -31,12 +37,6 @@ class Projects extends Component {
               uns dabei, noch mehr Menschen zu erreichen und weitere Partner zu gewinnen. Wir garantieren Ihnen, dass Ihre Spende im Jemen
               ankommt, da wir auf Ehrenamts-Basis arbeiten.
             </p>
-          </div>
-          <div className={projectStyles.projectCategories}>
-            <ProjectCategory title='Nahrungs-mittelhilfe' iconName='food' />
-            <ProjectCategory title='Erste-Hilfe-Kampagnen' iconName='aid' />
-            <ProjectCategory title='Medizinische Versorgung vor Ort' iconName='yemen' />
-            <ProjectCategory title='Waisen-patenschaften' iconName='orphan' />
           </div>
         </PageSection>
 

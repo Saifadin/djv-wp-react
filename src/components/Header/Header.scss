@@ -33,7 +33,7 @@
 
 
 .closeButton {
-  color: #ff5555;
+  color: var(--primary-color);
   height: 48px;
   align-self: flex-end;
   padding: 0 16px;
@@ -62,7 +62,7 @@
 
 .menuIcon {
   @media (max-width: 600px) {
-    color: #ff5555;
+    color: var(--primary-color);
     padding-right: 16px;
   }
   @media (min-width: 601px) {
@@ -83,5 +83,5 @@
 .menuItem {
   text-decoration: none;
   padding-left: 32px;
-  color: #ff5555;
+  color: var(--primary-color);
 }

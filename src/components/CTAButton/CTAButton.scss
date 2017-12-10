@@ -7,11 +7,11 @@
   box-sizing: border-box;
   background-color: transparent;
   width: 250px;
-  border: 6px solid #ff5555;
+  border: 6px solid var(--primary-color);
   height: 60px;
   cursor: pointer;
   transition: background 1s linear;
-  color: #ff5555;
+  color: var(--primary-color);
   text-decoration: none;
   margin: 16px auto;
   &:hover {

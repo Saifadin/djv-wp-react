@@ -11,6 +11,7 @@ const ProjectSelect = ({ project, index, category, checked, onChange }) => {
         name={`donation-project`}
         id={`project-${index}`}
         onChange={onChange}
+        checked={checked}
       />
       <span className={projectSelectStyles.box}>{project.title}</span>
     </label>

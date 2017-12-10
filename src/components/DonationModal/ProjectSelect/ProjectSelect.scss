@@ -11,7 +11,7 @@
   display: none;
   &:checked {
     + .box {
-      background-color: #ff5555;
+      background-color: var(--primary-color);
     }
   }
 }
@@ -31,6 +31,6 @@
   box-sizing: border-box;
   text-align: center;
   &:hover {
-    background-color: #ff5555;
+    background-color: var(--primary-color);
   }
 }

@@ -30,7 +30,7 @@
 .closeButton {
   display: block;
   background: none;
-  color: #ff5555;
+  color: var(--primary-color);
   height: 48px;
   align-self: flex-end;
   padding: 0 0 0 16px;
