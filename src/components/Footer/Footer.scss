@@ -9,7 +9,7 @@
 
 .headline {
   composes: h2 from '../../index.scss';
-  color: black;
+  color: var(--primary-color);
   margin: 0 0 84px;
 }
 

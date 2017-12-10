@@ -28,13 +28,11 @@
   margin-bottom: 16px;
   transition: all .5s linear;
   &:hover {
-    background-color: rgba(#ff5555, .15);
+    background-color: rgba(#801917, .15);
   } 
 }
 
 .title {
   composes: subHeadline from '../../index.scss';
-  word-break: break-all;
-  word-break: break-word;
   hyphens: auto;
 }

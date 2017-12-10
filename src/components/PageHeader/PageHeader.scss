@@ -23,7 +23,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(#ff5555, .65);
+  background-color: rgba(#801917, .65);
   z-index: 1;
 }
 
@@ -52,13 +52,13 @@
 
 .headLogo {
   @media (max-width: 600px) {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 75px;
   }
   position: absolute;
   bottom: 100%;
-  width: 150px;
-  height: 150px;
+  width: 400px;
+  height: 100px;
   display: block;
   margin-bottom: 32px;
 }

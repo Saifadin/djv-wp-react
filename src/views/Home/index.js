@@ -55,10 +55,10 @@ const Home = () => {
       </PageSection>
       <PageSection title='Projekte'>
         <div className={homeStyles.projectCategories}>
-          <ProjectCategory title='Nahrungs-mittelhilfe' iconName='food' />
+          <ProjectCategory title='Nahrungsmittelhilfe' iconName='food' />
           <ProjectCategory title='Erste-Hilfe-Kampagnen' iconName='aid' />
           <ProjectCategory title='Medizinische Versorgung vor Ort' iconName='yemen' />
-          <ProjectCategory title='Waisen-patenschaften' iconName='orphan' />
+          <ProjectCategory title='Waisenpatenschaften' iconName='orphan' />
         </div>
 
         <ProjectContainer title='Aktive Projekte' maxCount={4} category='aktiv' />

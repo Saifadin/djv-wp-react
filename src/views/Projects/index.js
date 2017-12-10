@@ -21,10 +21,10 @@ class Projects extends Component {
 
         <PageSection title='Unsere Arbeit'>
           <div className={projectStyles.projectCategories}>
-            <ProjectCategory title='Nahrungs-mittelhilfe' iconName='food' />
+            <ProjectCategory title='Nahrungsmittelhilfe' iconName='food' />
             <ProjectCategory title='Erste-Hilfe-Kampagnen' iconName='aid' />
             <ProjectCategory title='Medizinische Versorgung vor Ort' iconName='yemen' />
-            <ProjectCategory title='Waisen-patenschaften' iconName='orphan' />
+            <ProjectCategory title='Waisenpatenschaften' iconName='orphan' />
           </div>
           <div className='textRow'>
             <p className='paragraph'>
