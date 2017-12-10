@@ -25,8 +25,8 @@ const Footer = () => {
         </ContactElement>
         <ContactElement iconName='university'>
           <b>Spendenkonto</b><br/>
-          IBAN: DE67 1001 0010 0674 8651 09<br/>
-          SWIFT: PBNKDEFF
+          IBAN: DE04 1005 0000 0190 6225 39<br/>
+          SWIFT: BELADEBEXXX
         </ContactElement>
         <ContactElement iconName='envelope'>
           <b>E-Mail</b><br/>
