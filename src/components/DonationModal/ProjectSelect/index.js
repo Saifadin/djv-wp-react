@@ -7,7 +7,8 @@ const ProjectSelect = ({ project, index, category, checked, onChange }) => {
     <label className={projectSelectStyles.wrapper} htmlFor={`project-${index}`}>
       <input 
         className={projectSelectStyles.radio}
-        type='radio' value={project.title}
+        type='radio'
+        value={project.id}
         name={`donation-project`}
         id={`project-${index}`}
         onChange={onChange}

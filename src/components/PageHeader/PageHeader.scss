@@ -64,8 +64,12 @@
 }
 
 .headTitle {
-  composes: h1 from '../../index.scss';
+  composes: h3 from '../../index.scss';
   margin-bottom: 0;
   line-height: 68px;
+  text-align: center;
   color: var(--primary-color);
+  @media (max-width: 450px) {
+    line-height: 32px;
+  }
 }

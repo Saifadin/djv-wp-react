@@ -7,6 +7,8 @@ import PageSection from '../../components/PageSection'
 import CTAButton from '../../components/CTAButton'
 import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll'
 
+import { Paypal } from '../../projects'
+
 import projectStyles from './Project.scss'
 
 class Project extends Component {
@@ -16,7 +18,8 @@ class Project extends Component {
       title: '',
       bgImage: '',
       content: '',
-    }
+    },
+    paypalId: ''
   }
 
   componentWillMount() {
@@ -28,16 +31,25 @@ class Project extends Component {
         bgImage: data.data.better_featured_image ? data.data.better_featured_image.source_url : '/assets/yemen-topo.png',
         content: data.data.content.rendered,
       }
+      let paypalId
+
+      Paypal.forEach(element => {
+        if (element.id === parseInt(match.params.id, 10)) {
+          paypalId = element.paypalId
+        }
+      })
       
       this.setState({
-        project: preparedProject
+        project: preparedProject,
+        paypalId: paypalId
       })
     })
   }
 
   render() {
-    const { project } = this.state
+    const { project, paypalId } = this.state
     const { goBack } = this.props.history
+    const paypalUrl = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=' + paypalId
     return (
       <div>
         <PageHeader title={project.title} bgImage={project.bgImage} />
@@ -51,7 +63,7 @@ class Project extends Component {
             <a className={projectStyles.goBack} onClick={goBack}>Zurück</a>
           </div>
           <div className={projectStyles.renderedContent} dangerouslySetInnerHTML={{__html: project.content}} />
-          <CTAButton title='Jetzt Spenden' url='' />
+          <CTAButton title='Jetzt Spenden' url={paypalUrl} blank={true} />
         </PageSection>
       </div>
     )

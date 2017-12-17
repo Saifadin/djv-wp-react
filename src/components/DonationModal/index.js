@@ -5,6 +5,9 @@ import uniqId from 'uniqid'
 
 import ProjectSelect from './ProjectSelect'
 import CTAButton from '../CTAButton'
+
+import { Paypal } from '../../projects'
+
 import donationModalStyles from './DonationModal.scss'
 
 class DonationModal extends Component {
@@ -13,7 +16,8 @@ class DonationModal extends Component {
     this.state = {
       activeProjects: [],
       permaProjects: [],
-      selectedDonation: ''
+      selectedDonation: '',
+      paypalId: ''
     }
 
     this.handleOptionChange = this.handleOptionChange.bind(this)
@@ -31,9 +35,17 @@ class DonationModal extends Component {
   }
 
   handleOptionChange (changeEvent) {
-    console.log(changeEvent.target.value)
+    let paypalId
+    
+    Paypal.forEach(element => {
+      if (element.id === parseInt(changeEvent.target.value, 10)) {
+        paypalId = element.paypalId
+      }
+    })
+
     this.setState({
-      selectedDonation: changeEvent.target.value
+      selectedDonation: changeEvent.target.value,
+      paypalId: paypalId
     });
   }
 
@@ -59,7 +71,8 @@ class DonationModal extends Component {
 
   render() {
     const { isOpen, onCloseModal } = this.props
-    const donationUrl = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=S7ZAP9MNV8EGU'
+    const { paypalId, selectedDonation, activeProjects, permaProjects } = this.state
+    const donationUrl = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=' + paypalId
 
     return (
       <Modal
@@ -77,28 +90,28 @@ class DonationModal extends Component {
           <h2 className={donationModalStyles.headline}>In zwei Schritten spenden:</h2>
           <h3 className={donationModalStyles.stepHeadline}>1. Spendenzweck auswählen:</h3>
           <div className={donationModalStyles.projects}>
-            { this.state.activeProjects.map((project) => {
+            { activeProjects.map((project) => {
               return <ProjectSelect 
                         key={uniqId()}
                         category='aktiv'
                         index={project.id}
                         project={project}
-                        checked={this.state.selectedDonation === project.title} 
+                        checked={parseInt(selectedDonation, 10) === parseInt(project.id, 10)} 
                         onChange={this.handleOptionChange}
                       />
             }) }
-            { this.state.permaProjects.map((project, index) => {
+            { permaProjects.map((project, index) => {
               return <ProjectSelect 
                         key={uniqId()}
                         category='permanent' 
-                        index={index} 
+                        index={project.id} 
                         project={project}
-                        checked={this.state.selectedDonation === project.title} 
+                        checked={parseInt(selectedDonation, 10) === parseInt(project.id, 10)} 
                         onChange={this.handleOptionChange}
                       />
             }) }
           </div>
-          <div className={this.state.selectedDonation ? '' : donationModalStyles.disabled }>
+          <div className={selectedDonation ? '' : donationModalStyles.disabled }>
             <h3 className={donationModalStyles.stepHeadline}>2. Über Paypal spenden: </h3>
             <CTAButton url={donationUrl} title='Jetzt Spenden' />
           </div>

@@ -9,6 +9,7 @@ import Projects from './views/Projects'
 import Project from './views/Project'
 import AboutUs from './views/AboutUs'
 import Impressum from './views/Impressum'
+import ThankYou from './views/ThankYou'
 
 class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
@@ -39,6 +40,7 @@ class App extends Component {
             <Route path="/ueber-uns" component={AboutUs}/>
             <Route path="/projekt/:id" component={Project}/>
             <Route path="/impressum" component={Impressum}/>
+            <Route path="/danke" component={ThankYou}/>
           </ScrollToTop>
         </Switch>
         <Footer />

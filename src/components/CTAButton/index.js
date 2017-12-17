@@ -2,9 +2,9 @@ import React from 'react'
 
 import ctaButtonStyles from './CTAButton.scss'
 
-const CTAButton = ({ title, url}) => {
+const CTAButton = ({ title, url, blank }) => {
   return (
-    <a className={ctaButtonStyles.button} href={url} title={title}>{title}</a>
+    <a className={ctaButtonStyles.button} href={url} title={title} target={blank ? '_blank' : ''}>{title}</a>
   )
 }
 

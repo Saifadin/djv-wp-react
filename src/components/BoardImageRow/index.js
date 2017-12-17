@@ -5,9 +5,9 @@ import styles from './BoardImageRow.scss'
 
 const BoardImageRow = ({size}) => {
   const images = [
-    {src: '/assets/board/aniss.jpeg', name: 'Aniss Aldoaiss'},
-    {src: '/assets/board/anis-hassan.jpeg', name: 'Anis Hassan'},
-    {src: '/assets/board/ahmed.jpeg', name: 'Ahmed Al-Khameri'},
+    {src: '/assets/board/aniss.jpeg', name: 'Dr. Aniss Aldoaiss'},
+    {src: '/assets/board/anis-hassan.jpeg', name: 'Dr. Anis Hassan'},
+    {src: '/assets/board/ahmed.jpeg', name: 'Dr. Ahmed Al-Khameri'},
   ]
   return (
     <div className={styles.wrapper}>
