@@ -5,9 +5,9 @@ import styles from './Board.scss'
 
 const Board = () => {
   const board = [
-    {src: '/assets/board/aniss.jpeg', name: 'Dr. Aniss Aldoaiss', role: 'Vorsitzender'},
+    {src: '/assets/board/aniss.jpeg', name: 'Dr. Aniss Al-Doaiss', role: 'Vorsitzender'},
     {src: '/assets/board/ahmed.jpeg', name: 'Dr. Ahmed Al-Khameri', role: 'Stellvertretender Vorsitzender'},
-    {src: '/assets/board/anis-hassan.jpeg', name: 'Dr. Anis Hassan', role: 'Vorstandsmitglied'},
+    {src: '/assets/board/anis-hassan.jpeg', name: 'Anes Hassan', role: 'Zuständig für Datenbanken'},
   ]
   return (
     <div className={styles.wrapper}>
