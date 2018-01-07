@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
-// import axios from 'axios'
 
 import Footer from './components/Footer'
 
@@ -26,10 +25,6 @@ class ScrollToTop extends Component {
 withRouter(ScrollToTop)
 
 class App extends Component {
-  componentWillMount() {
-    // axios.get('https://djv-hilfe.de/wp-json/wp-api-menus/v2/menus/6').then(res => console.log(res.data))
-  }
-
   render() {
     return (
       <div className="App">

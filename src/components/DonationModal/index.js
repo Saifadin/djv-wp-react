@@ -28,7 +28,7 @@ class DonationModal extends Component {
       7, 8
     ]
     categoryIds.forEach(id => {
-      axios.get('https://djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id ).then((data) => {
+      axios.get('https://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id ).then((data) => {
         this.preparedProjects(data.data, id)
       })
     })

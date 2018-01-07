@@ -13,7 +13,7 @@ class ProjectContainer extends Component {
       'aktiv': 7,
       'permanent': 8,
     }
-    axios.get('https://djv-hilfe.de/wp-json/wp/v2/projects?categories=' + categoryIds[this.props.category] ).then((data) => {
+    axios.get('https://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + categoryIds[this.props.category] ).then((data) => {
       this.prepareProjects(data.data)
     })
   }
