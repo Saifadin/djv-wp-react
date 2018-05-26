@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.wrapper {
+  composes: row from global;
+  text-align: center;
+  width: 100%;
+  flex: 1;
+  overflow: scroll;
+  padding-bottom: 16px;
+}
+
+.disabled {
+  transition: all 0.5s ease-in;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.headline {
+  composes: h3 from '../../index.scss';
+  margin-bottom: 32px;
+}
+
+.stepHeadline {
+  composes: h4 from '../../index.scss';
+  margin-bottom: 32px;
+}
+
+.projects {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
