@@ -14,7 +14,7 @@ import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll';
 
 import styles from './Donate.scss';
 
-class AboutUs extends Component {
+class Donate extends Component {
   constructor() {
     super();
     this.state = {
@@ -121,4 +121,4 @@ class AboutUs extends Component {
   }
 }
 
-export default AboutUs;
+export default Donate;

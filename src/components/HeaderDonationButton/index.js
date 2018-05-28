@@ -1,65 +1,64 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import DonationModal from '../DonationModal'
-import buttonStyles from './HeaderDonationButton.scss'
+import DonationModal from '../DonationModal';
+import buttonStyles from './HeaderDonationButton.scss';
 
 class HeaderDonationButton extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       isVisible: false,
-      modalIsOpen: false
-    }
+      modalIsOpen: false,
+    };
 
-    this.openDonationModal = this.openDonationModal.bind(this)
-    this.closeDonationModal = this.closeDonationModal.bind(this)
-    this.scrollHandler = this.scrollHandler.bind(this)
+    this.openDonationModal = this.openDonationModal.bind(this);
+    this.closeDonationModal = this.closeDonationModal.bind(this);
+    this.scrollHandler = this.scrollHandler.bind(this);
   }
-  
+
   componentWillMount() {
-    document.addEventListener('scroll', this.scrollHandler)
+    document.addEventListener('scroll', this.scrollHandler);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('scroll', this.scrollHandler)
+    document.removeEventListener('scroll', this.scrollHandler);
   }
 
   scrollHandler(e) {
-    const bodyScrollHeight = e.target.scrollingElement.scrollTop
+    const bodyScrollHeight = e.target.scrollingElement.scrollTop;
     if (window.innerWidth < 601 && bodyScrollHeight < 600) {
       this.setState({
-        isVisible: false
-      })
+        isVisible: false,
+      });
     } else {
       this.setState({
-        isVisible: true
-      })
+        isVisible: true,
+      });
     }
   }
 
   openDonationModal() {
     this.setState({
-      modalIsOpen: true
-    })
+      modalIsOpen: true,
+    });
   }
 
   closeDonationModal() {
     this.setState({
-      modalIsOpen: false
-    })
+      modalIsOpen: false,
+    });
   }
-  
+
   render() {
     return [
-      <button key='button' className={this.state.isVisible ? buttonStyles.donationButton : buttonStyles.hideButton} onClick={this.openDonationModal}>
+      <button
+        key="button"
+        className={this.state.isVisible ? buttonStyles.donationButton : buttonStyles.hideButton}
+        onClick={this.openDonationModal}>
         <span>Jetzt Spenden</span>
       </button>,
-      <DonationModal
-        key='modal'
-        isOpen={this.state.modalIsOpen}
-        onCloseModal={this.closeDonationModal}
-      />
-    ]
+      <DonationModal key="modal" isOpen={this.state.modalIsOpen} onCloseModal={this.closeDonationModal} />,
+    ];
   }
 }
 
