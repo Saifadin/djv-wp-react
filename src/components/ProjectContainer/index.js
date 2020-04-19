@@ -12,7 +12,7 @@ const ProjectContainer = ({ category, title, maxCount }) => {
       let preparedProject = {
         id,
         title,
-        bgImage: image && image[0] ? `${serverUrl}${image[0].url}` : '',
+        bgImage: image && image[0] && image[0].url,
         description: subTitle,
       };
       return preparedProject;

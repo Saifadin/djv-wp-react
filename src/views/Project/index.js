@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Header from '../../components/Header';
@@ -12,69 +12,6 @@ import { Paypal } from '../../projects';
 import projectStyles from './Project.scss';
 import { serverUrl } from '../../server';
 
-class Project2 extends Component {
-  state = {
-    project: {
-      id: '',
-      title: '',
-      bgImage: '',
-      content: '',
-    },
-    paypalId: '',
-  };
-
-  componentWillMount() {
-    const { match } = this.props;
-
-    axios.get('http://cms.djv-hilfe.de/wp-json/wp/v2/projects/' + match.params.id).then((data) => {
-      let preparedProject = {
-        id: data.data.id,
-        title: data.data.title.rendered,
-        bgImage: data.data.better_featured_image ? data.data.better_featured_image.source_url : '/assets/yemen-topo.png',
-        content: data.data.content.rendered,
-      };
-      let paypalId;
-
-      Paypal.forEach((element) => {
-        if (element.id === parseInt(match.params.id, 10)) {
-          paypalId = element.paypalId;
-        }
-      });
-
-      this.setState({
-        project: preparedProject,
-        paypalId: paypalId,
-      });
-    });
-  }
-
-  render() {
-    const { project, paypalId } = this.state;
-    const { goBack } = this.props.history;
-    const paypalUrl = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=' + paypalId;
-
-    return (
-      <div>
-        <PageHeader title={project.title} bgImage={project.bgImage} />
-
-        <FixedHeaderAfterScroll>
-          <Header />
-        </FixedHeaderAfterScroll>
-
-        <PageSection>
-          <div className="textRow">
-            <a className={projectStyles.goBack} onClick={goBack}>
-              Zurück
-            </a>
-          </div>
-          <div className={projectStyles.renderedContent} dangerouslySetInnerHTML={{ __html: project.content }} />
-          <CTAButton title="Jetzt Spenden" url={paypalUrl} blank={true} />
-        </PageSection>
-      </div>
-    );
-  }
-}
-
 const Project = ({ history: { goBack }, match }) => {
   const [project, setProject] = useState({});
   const [paypalId, setPaypalId] = useState('');
@@ -86,7 +23,7 @@ const Project = ({ history: { goBack }, match }) => {
         id,
         title,
         content,
-        bgImage: image && image[0] ? `${serverUrl}${image[0].url}` : '',
+        bgImage: image && image[0] && image[0].url,
       });
       let paypalId;
 
