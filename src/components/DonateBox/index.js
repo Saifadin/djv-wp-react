@@ -30,7 +30,7 @@ const DonateBox = ({ version = 1 }) => {
   const fetchProjects = () => {
     const categoryIds = [7, 8];
     categoryIds.forEach((id) => {
-      axios.get('http://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id).then((data) => {
+      axios.get('https://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id).then((data) => {
         prepareProjects(data.data, id);
       });
     });
