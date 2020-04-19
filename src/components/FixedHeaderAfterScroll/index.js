@@ -1,52 +1,34 @@
-import React, { Component } from 'react'
+import React, { useLayoutEffect, useState } from 'react';
 
-import fixedHeaderStyles from './FixedHeaderAfterScroll.scss'
+import fixedHeaderStyles from './FixedHeaderAfterScroll.scss';
 
-class FixedHeaderAfterScroll extends Component {
-  constructor() {
-    super()
-    this.state = {
-      isFixed: false,
-      headerOffset: null
-    }
-    this.scrollHandler = this.scrollHandler.bind(this)
-  }
+const FixedHeaderAfterScroll = ({ children }) => {
+  const [isFixed, setIsFixed] = useState(false);
 
-  componentWillMount() {
-    document.addEventListener('scroll', this.scrollHandler)
-  }
+  useLayoutEffect(() => {
+    const scrollHandler = (e) => {
+      const bodyHeight = window.innerHeight;
+      const bodyScrollPosition = window.scrollY;
 
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.scrollHandler);
-  }
+      if (bodyScrollPosition + 72 > bodyHeight) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
 
-  scrollHandler(e) {
-    const bodyScrollHeight = e.target.scrollingElement.scrollTop
-    const headerOffsetTop = document.getElementsByClassName('scrollHeader')[0].offsetTop
-    if (this.state.headerOffset) {
-      this.setState({
-        isFixed: this.state.headerOffset <= bodyScrollHeight
-      })
-    } else {
-      this.setState({
-        isFixed: headerOffsetTop <= bodyScrollHeight,
-        headerOffset: document.getElementsByClassName('scrollHeader')[0].offsetTop
-      })
-    }
-  }
-  
-  render() {
-    const isFixedClassName = this.state.isFixed ? fixedHeaderStyles.fixed : '';
-    const jsClassName = 'scrollHeader'
-    
-    return (
-      <div className={fixedHeaderStyles.wrapper}>
-        <div className={[jsClassName, isFixedClassName].join(' ')}>
-          {this.props.children}
-        </div>
-      </div>
-    );
-  }
-}
+    document.addEventListener('scroll', scrollHandler);
+    return () => document.removeEventListener('scroll', scrollHandler);
+  }, []);
+
+  const isFixedClassName = isFixed ? fixedHeaderStyles.fixed : '';
+  const jsClassName = 'scrollHeader';
+
+  return (
+    <div className={fixedHeaderStyles.wrapper}>
+      <div className={[jsClassName, isFixedClassName].join(' ')}>{children}</div>
+    </div>
+  );
+};
 
 export default FixedHeaderAfterScroll;

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import ModalContext from '../../contexts/ModalContext';
 import Header from '../../components/Header';
 import PageSection from '../../components/PageSection';
 import ProjectCategory from '../../components/ProjectCategory';
@@ -7,8 +8,15 @@ import ProjectContainer from '../../components/ProjectContainer';
 import CTAButton from '../../components/CTAButton';
 import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll';
 import homeStyles from './Home.scss';
+import DonateBox from '../../components/DonateBox';
 
 const Home = () => {
+  const { toggleModal } = useContext(ModalContext);
+
+  const openDonationModal = () => {
+    toggleModal(true, 'donation');
+  };
+
   return (
     <div className={homeStyles.home}>
       <section className={homeStyles.headSection}>
@@ -19,30 +27,40 @@ const Home = () => {
           <div className={homeStyles.headContent}>
             <img src="/Logo.png" alt="djv-logo" className={homeStyles.headLogo} />
             <h1 className={homeStyles.headTitle}>Deutsch-Jemenitischer Verein für Hilfe und Entwicklung e.V.</h1>
+            <button className={homeStyles.donationButton} onClick={openDonationModal}>
+              <span>Jetzt Spenden</span>
+            </button>
           </div>
         </div>
       </section>
       <FixedHeaderAfterScroll>
         <Header />
       </FixedHeaderAfterScroll>
+      <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" bgImagePosition="right" title="Aktionen im Ramadan">
+        <div className="textRow">
+          <div style={{ maxWidth: 560 }}>
+            <iframe
+              title="Ramadan Video"
+              src="https://www.youtube.com/embed/CILqLoA75kE"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ marginBottom: 40, width: '100%', height: 315 }}></iframe>
+          </div>
+          <img src="/assets/ramadan-plakat.jpg" alt="Ramadan Projekte" className={homeStyles.image} />
+        </div>
+        <DonateBox version="Donation1" />
+      </PageSection>
       <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" title="Über Uns">
         <div className="textRow">
-          <iframe
-            title="Ramadan Video"
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/CILqLoA75kE"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style={{ marginBottom: 24 }}></iframe>
           <p className="paragraph">
-            Der Deutsch-jemenitische Verein für Hilfe und Entwicklung ist ein ehrenamtlicher Gesellschaftsverein, der 2013 offiziell in
-            Deutschland gegründet wurde.
+            Der Deutsch-Jemenitische Verein für Hilfe und Entwicklung ist ein ehrenamtlicher Gesellschaftsverein, der 2013 offiziell in
+            Deutschland gegründet wurde, um der humanitären Lage im Jemen entgegen zu wirken. 24 Millionen Menschen, 80% der Bevölkerung,
+            benötigt humanitäre Hilfe.
           </p>
           <p className="paragraph">
-            Unser großes Ziel ist es, eine Brücke zwischen den Bedürftigen im Jemen und den Spendern aus Deutschland und Europa zu
-            etablieren.
+            Wir möchten eine Brücke zwischen den Bedürftigen im Jemen und Spendern aus Deutschland und Europa etablieren. Dadurch können wir
+            das Leid im Jemen reduzieren und einen Teil dazu beitragen, dass diese humanitäre Katastrophe überwunden werden kann.
           </p>
         </div>
         <CTAButton title="Mehr Über Uns" url="/ueber-uns" />
@@ -57,6 +75,11 @@ const Home = () => {
             Das wollen wir erreichen durch soziale, finanzielle und kulturelle Unterstützung hilfsbedürftiger Familien und der Umsetzung von
             Entwickelungsprojekten in den betroffenen Gebieten.
           </p>
+          <div>
+            <button className={homeStyles.donationButton} onClick={openDonationModal}>
+              <span>Jetzt Spenden</span>
+            </button>
+          </div>
         </div>
       </PageSection>
       <PageSection title="Projekte">
@@ -69,6 +92,8 @@ const Home = () => {
 
         <ProjectContainer title="Aktive Projekte" maxCount={4} category="aktiv" />
         <ProjectContainer title="Permanente Projekte" maxCount={4} category="permanent" />
+
+        <DonateBox version="Donation2" />
       </PageSection>
     </div>
   );

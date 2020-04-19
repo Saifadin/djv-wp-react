@@ -12,6 +12,7 @@
   &:checked {
     + .box {
       background-color: var(--primary-color);
+      border: 4px solid white;
     }
   }
 }
@@ -21,15 +22,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(#801917, .5);
+  background-color: rgba(#801917, 0.75);
   color: white;
   width: 300px;
   height: 60px;
   cursor: pointer;
-  transition: all .3s linear;
-  padding: 0 32px;
+  transition: background 0.3s linear;
+  padding: 0 24px;
   box-sizing: border-box;
   text-align: center;
+  font-size: 16px;
   &:hover {
     background-color: var(--primary-color);
   }

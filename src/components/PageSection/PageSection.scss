@@ -15,13 +15,19 @@
 .grid {
   composes: section;
   composes: row from global;
-  padding: 80px 16px;
+  padding: 80px 24px;
 }
 
 .heading {
   composes: h2 from '../../index.scss';
   margin: 0;
-  margin-bottom: 80px;
+  margin-bottom: 32px;
+  @media (min-width: 600px) {
+    margin-bottom: 40px;
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 80px;
+  }
 }
 
 .bgImageWrapper {
@@ -52,11 +58,11 @@
 .bgOverlay {
   position: absolute;
   top: 0;
-  left:0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(white, .65);
+  background-color: rgba(white, 0.65);
 }
 
 .image {
@@ -66,5 +72,4 @@
 }
 
 .content {
-
 }

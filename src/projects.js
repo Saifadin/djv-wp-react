@@ -7,4 +7,4 @@ export const Paypal = [
   { id: 86, paypalId: 'S7ZAP9MNV8EGU' },
   { id: 87, paypalId: 'B9Q5ELTRX5J22' },
   { id: 88, paypalId: 'T5Q3VBNH8HVCQ' },
-]
+];

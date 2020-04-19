@@ -3,18 +3,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:24px;
+  padding: 24px;
   box-sizing: border-box;
-  background-color: transparent;
+  background-color: rgba(#ffffff, 0.7);
   width: 250px;
   border: 6px solid var(--primary-color);
   height: 60px;
   cursor: pointer;
-  transition: background 1s linear;
+  transition: background 0.3s linear;
   color: var(--primary-color);
   text-decoration: none;
   margin: 16px auto;
   &:hover {
-    background-color: rgba(#801917, .2);
+    background-color: white;
   }
 }

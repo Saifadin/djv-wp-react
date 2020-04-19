@@ -2,40 +2,40 @@
   font-family: 'Metropolis';
   font-weight: 400;
   src: url('/fonts/Metropolis-Regular.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/Metropolis-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/Metropolis-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/Metropolis-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/Metropolis-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+  src: url('/fonts/Metropolis-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/fonts/Metropolis-Regular.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/Metropolis-Regular.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('/fonts/Metropolis-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 @font-face {
   font-family: 'Metropolis';
   font-weight: 500;
   src: url('/fonts/Metropolis-SemiBold.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/Metropolis-SemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/Metropolis-SemiBold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/Metropolis-SemiBold.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/Metropolis-SemiBold.ttf')  format('truetype'); /* Safari, Android, iOS */
+  src: url('/fonts/Metropolis-SemiBold.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/fonts/Metropolis-SemiBold.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/Metropolis-SemiBold.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('/fonts/Metropolis-SemiBold.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 @font-face {
   font-family: 'Metropolis';
   font-weight: 600;
   src: url('/fonts/Metropolis-Bold.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/Metropolis-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/Metropolis-Bold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/Metropolis-Bold.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/Metropolis-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+  src: url('/fonts/Metropolis-Bold.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/fonts/Metropolis-Bold.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/Metropolis-Bold.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('/fonts/Metropolis-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 @font-face {
   font-family: 'Metropolis';
   font-weight: 800;
   src: url('/fonts/Metropolis-Black.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/Metropolis-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/Metropolis-Black.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/Metropolis-Black.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/Metropolis-Black.ttf')  format('truetype'); /* Safari, Android, iOS */
+  src: url('/fonts/Metropolis-Black.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/fonts/Metropolis-Black.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/fonts/Metropolis-Black.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('/fonts/Metropolis-Black.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 @import './colors.scss';
@@ -64,7 +64,7 @@ body {
   right: 0;
   max-width: 320px;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   padding: 12px 24px;
   margin: 20px;
   font-size: 13px;
@@ -93,21 +93,21 @@ body {
 }
 
 .h2 {
-  @media (max-width: 600px) {
-    font-size: 32px;
-    line-height: 40px;
-  }
-  @media (min-width: 601px) and (max-width: 768px) {
-    font-size: 48px;
-    line-height: 60px;
-  }
   display: block;
-  font-size: 64px;
-  line-height: 77px;
+  font-size: 32px;
+  line-height: 40px;
   font-weight: 800;
   text-transform: uppercase;
   color: var(--primary-color);
   margin: 0;
+  @media (min-width: 600px) {
+    font-size: 48px;
+    line-height: 60px;
+  }
+  @media (min-width: 768px) {
+    font-size: 64px;
+    line-height: 77px;
+  }
 }
 
 .h3 {
@@ -144,10 +144,14 @@ body {
 }
 
 :global(.paragraph) {
-  font-size: 15px;
-  line-height: 27px;
+  font-size: 14px;
+  line-height: 24px;
   margin-bottom: 24px;
   font-weight: 500;
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 32px;
+  }
 }
 
 :global(.paragraphUI) {

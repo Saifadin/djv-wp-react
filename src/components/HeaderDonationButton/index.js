@@ -1,65 +1,43 @@
-import React, { Component } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
+import ModalContext from '../../contexts/ModalContext';
 import DonationModal from '../DonationModal';
 import buttonStyles from './HeaderDonationButton.scss';
 
-class HeaderDonationButton extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isVisible: false,
-      modalIsOpen: false,
+const HeaderDonationButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const { toggleModal, visibleModal } = useContext(ModalContext);
+
+  useEffect(() => {
+    const scrollHandler = (e) => {
+      const bodyScrollHeight = e.target.scrollingElement.scrollTop;
+      if (window.innerWidth < 601 && bodyScrollHeight < 600) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
     };
+    document.addEventListener('scroll', scrollHandler);
 
-    this.openDonationModal = this.openDonationModal.bind(this);
-    this.closeDonationModal = this.closeDonationModal.bind(this);
-    this.scrollHandler = this.scrollHandler.bind(this);
-  }
+    return () => document.removeEventListener('scroll', this.scrollHandler);
+  }, []);
 
-  componentWillMount() {
-    document.addEventListener('scroll', this.scrollHandler);
-  }
+  const openDonationModal = () => {
+    toggleModal(true, 'donation');
+  };
 
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.scrollHandler);
-  }
+  const closeDonationModal = () => {
+    toggleModal(false, 'donation');
+  };
 
-  scrollHandler(e) {
-    const bodyScrollHeight = e.target.scrollingElement.scrollTop;
-    if (window.innerWidth < 601 && bodyScrollHeight < 600) {
-      this.setState({
-        isVisible: false,
-      });
-    } else {
-      this.setState({
-        isVisible: true,
-      });
-    }
-  }
-
-  openDonationModal() {
-    this.setState({
-      modalIsOpen: true,
-    });
-  }
-
-  closeDonationModal() {
-    this.setState({
-      modalIsOpen: false,
-    });
-  }
-
-  render() {
-    return [
-      <button
-        key="button"
-        className={this.state.isVisible ? buttonStyles.donationButton : buttonStyles.hideButton}
-        onClick={this.openDonationModal}>
+  return (
+    <React.Fragment>
+      <button key="button" className={isVisible ? buttonStyles.donationButton : buttonStyles.hideButton} onClick={openDonationModal}>
         <span>Jetzt Spenden</span>
-      </button>,
-      <DonationModal key="modal" isOpen={this.state.modalIsOpen} onCloseModal={this.closeDonationModal} />,
-    ];
-  }
-}
+      </button>
+      <DonationModal key="modal" isOpen={visibleModal === 'donation'} onCloseModal={closeDonationModal} />
+    </React.Fragment>
+  );
+};
 
 export default HeaderDonationButton;
