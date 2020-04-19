@@ -24,7 +24,7 @@ class Project extends Component {
 
   componentWillMount() {
     const { match } = this.props;
-    axios.get('https://cms.djv-hilfe.de/wp-json/wp/v2/projects/' + match.params.id).then((data) => {
+    axios.get('http://cms.djv-hilfe.de/wp-json/wp/v2/projects/' + match.params.id).then((data) => {
       let preparedProject = {
         id: data.data.id,
         title: data.data.title.rendered,

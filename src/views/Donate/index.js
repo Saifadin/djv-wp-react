@@ -29,8 +29,8 @@ class Donate extends Component {
 
   componentWillMount() {
     const categoryIds = [7, 8];
-    categoryIds.forEach(id => {
-      axios.get('https://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id).then(data => {
+    categoryIds.forEach((id) => {
+      axios.get('http://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id).then((data) => {
         this.preparedProjects(data.data, id);
       });
     });
@@ -39,7 +39,7 @@ class Donate extends Component {
   handleOptionChange(changeEvent) {
     let paypalId;
 
-    Paypal.forEach(element => {
+    Paypal.forEach((element) => {
       if (element.id === parseInt(changeEvent.target.value, 10)) {
         paypalId = element.paypalId;
       }
@@ -52,7 +52,7 @@ class Donate extends Component {
   }
 
   preparedProjects(wpData, id) {
-    const projects = wpData.map(project => {
+    const projects = wpData.map((project) => {
       let preparedProject = {
         id: project.id,
         title: project.title.rendered,
@@ -85,7 +85,7 @@ class Donate extends Component {
             <h2 className={styles.headline}>In zwei Schritten spenden:</h2>
             <h3 className={styles.stepHeadline}>1. Spendenzweck auswählen:</h3>
             <div className={styles.projects}>
-              {activeProjects.map(project => {
+              {activeProjects.map((project) => {
                 return (
                   <ProjectSelect
                     key={uniqId()}

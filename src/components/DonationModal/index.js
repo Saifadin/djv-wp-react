@@ -26,7 +26,7 @@ class DonationModal extends Component {
   componentWillMount() {
     const categoryIds = [7, 8];
     categoryIds.forEach((id) => {
-      axios.get('https://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id).then((data) => {
+      axios.get('http://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id).then((data) => {
         this.preparedProjects(data.data, id);
       });
     });
