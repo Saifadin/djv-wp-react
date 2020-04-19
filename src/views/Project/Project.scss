@@ -1,11 +1,10 @@
 .renderedContent {
-  composes: textRow from global;
-  p {
-    font-size: 15px;
-    line-height: 27px;
-    margin-bottom: 24px;
-    font-weight: 500;
-  }
+  font-size: 15px;
+  line-height: 27px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  white-space: pre-line;
+  margin-bottom: 40px;
 }
 
 .goBack {

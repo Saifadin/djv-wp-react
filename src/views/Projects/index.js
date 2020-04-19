@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import Header from '../../components/Header'
-import PageHeader from '../../components/PageHeader'
-import PageSection from '../../components/PageSection'
-import ProjectCategory from '../../components/ProjectCategory'
-import ProjectContainer from '../../components/ProjectContainer'
-import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll'
+import Header from '../../components/Header';
+import PageHeader from '../../components/PageHeader';
+import PageSection from '../../components/PageSection';
+import ProjectCategory from '../../components/ProjectCategory';
+import ProjectContainer from '../../components/ProjectContainer';
+import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll';
 
-import projectStyles from './Projects.scss'
+import projectStyles from './Projects.scss';
 
 class Projects extends Component {
   render() {
@@ -19,20 +19,21 @@ class Projects extends Component {
           <Header />
         </FixedHeaderAfterScroll>
 
-        <PageSection title='Unsere Arbeit'>
+        <PageSection title="Unsere Arbeit">
           <div className={projectStyles.projectCategories}>
-            <ProjectCategory title='Nahrungsmittelhilfe' iconName='food' />
-            <ProjectCategory title='Erste-Hilfe-Kampagnen' iconName='aid' />
-            <ProjectCategory title='Medizinische Versorgung vor Ort' iconName='yemen' />
-            <ProjectCategory title='Waisenpatenschaften' iconName='orphan' />
+            <ProjectCategory title="Nahrungsmittelhilfe" iconName="food" />
+            <ProjectCategory title="Erste-Hilfe-Kampagnen" iconName="aid" />
+            <ProjectCategory title="Medizinische Versorgung vor Ort" iconName="yemen" />
+            <ProjectCategory title="Waisenpatenschaften" iconName="orphan" />
           </div>
-          <div className='textRow'>
-            <p className='paragraph'>
+          <div className="textRow">
+            <p className="paragraph">
               Seit 2013 bemüht sich der DJV e.V. darum, die Lage der jemenitischen Bevölkerung in Kriegszeiten zu verbessern. Dies wird
               hauptsächlich mit Projekten umgesetzt, die zeitaktuell sind und dringend benötigt werden, zum Beispiel als das Dengue-Fieber
-              im Jemen ausbrach. In Kooperation mit diversen Vereinen wurden Spenden für Medikamente und medizinische Ausrüstungen gesammelt.
+              im Jemen ausbrach. In Kooperation mit diversen Vereinen wurden Spenden für Medikamente und medizinische Ausrüstungen
+              gesammelt.
             </p>
-            <p className='paragraph'>
+            <p className="paragraph">
               Mit Ihrer Unterstützung können wir noch bessere Unterstützung für die jemenitische Bevölkerung garantieren. Jede Spende hilft
               uns dabei, noch mehr Menschen zu erreichen und weitere Partner zu gewinnen. Wir garantieren Ihnen, dass Ihre Spende im Jemen
               ankommt, da wir auf Ehrenamts-Basis arbeiten.
@@ -40,16 +41,16 @@ class Projects extends Component {
           </div>
         </PageSection>
 
-        <PageSection title='Aktive Projekte'>
-          <ProjectContainer category='aktiv' />
+        <PageSection title="Aktive Projekte">
+          <ProjectContainer category="active" />
         </PageSection>
-        
-        <PageSection title='Permanente Projekte'>
-          <ProjectContainer category='permanent' />
+
+        <PageSection title="Permanente Projekte">
+          <ProjectContainer category="permanent" />
         </PageSection>
       </div>
-    )
+    );
   }
 }
 
-export default Projects
+export default Projects;

@@ -1,49 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import ProjectRow from '../ProjectRow';
+import { serverUrl } from '../../server';
 
-class ProjectContainer extends Component {
-  state = {
-    projects: [],
-  };
+const ProjectContainer = ({ category, title, maxCount }) => {
+  const [projects, setProjects] = useState([]);
 
-  componentWillMount() {
-    const categoryIds = {
-      aktiv: 7,
-      permanent: 8,
-    };
-    axios.get('http://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + categoryIds[this.props.category]).then((data) => {
-      this.prepareProjects(data.data);
-    });
-  }
-
-  prepareProjects(wpData) {
-    const projects = wpData.map((project) => {
-      const stripDiv = document.createElement('div');
-      stripDiv.innerHTML = project.excerpt.rendered;
-      const strippedExcerpt = stripDiv.textContent || stripDiv.innerText || '';
-
+  const prepareProjects = (data) => {
+    const projects = data.map(({ id, title, subTitle, image }) => {
       let preparedProject = {
-        id: project.id,
-        title: project.title.rendered,
-        bgImage: project.better_featured_image ? project.better_featured_image.source_url : '/assets/yemen-topo.png',
-        description: strippedExcerpt,
+        id,
+        title,
+        bgImage: image && image[0] ? `${serverUrl}${image[0].url}` : '',
+        description: subTitle,
       };
       return preparedProject;
     });
-    this.setState({
-      projects: projects,
-    });
-  }
+    setProjects(projects);
+  };
 
-  render() {
-    return (
-      this.state.projects.length > 0 && (
-        <ProjectRow title={this.props.title} projects={this.state.projects} maxCount={this.props.maxCount} />
-      )
-    );
-  }
-}
+  useEffect(() => {
+    axios.get(`${serverUrl}/projects?type=${category}`).then(({ data }) => {
+      prepareProjects(data);
+    });
+  }, []);
+  return projects.length > 0 && <ProjectRow title={title} projects={projects} maxCount={maxCount} />;
+};
 
 export default ProjectContainer;

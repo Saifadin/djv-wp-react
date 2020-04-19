@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { Paypal } from '../../projects';
+import { serverUrl } from '../../server';
 import ProjectSelect from '../DonationModal/ProjectSelect';
 import CTAButton from '../CTAButton';
 import donationModalStyles from './DonationBox.scss';
@@ -12,26 +13,26 @@ const DonateBox = ({ version = 1 }) => {
   const [selectedDonation, setSelectedDonation] = useState('');
   const [paypalId, setPaypalId] = useState('');
 
-  const prepareProjects = (wpData, id) => {
-    const projects = wpData.map((project) => {
+  const prepareProjects = (data, id) => {
+    const projects = data.map((project) => {
       let preparedProject = {
         id: project.id,
-        title: project.title.rendered,
+        title: project.title,
       };
       return preparedProject;
     });
-    if (id === 7) {
+    if (id === 'active') {
       setActiveProjects(projects);
-    } else if (id === 8) {
+    } else if (id === 'permanent') {
       setPermaProjects(projects);
     }
   };
 
   const fetchProjects = () => {
-    const categoryIds = [7, 8];
+    const categoryIds = ['active', 'permanent'];
     categoryIds.forEach((id) => {
-      axios.get('http://cms.djv-hilfe.de/wp-json/wp/v2/projects?categories=' + id).then((data) => {
-        prepareProjects(data.data, id);
+      axios.get(`${serverUrl}/projects?type=${id}`).then(({ data }) => {
+        prepareProjects(data, id);
       });
     });
   };
@@ -40,7 +41,6 @@ const DonateBox = ({ version = 1 }) => {
     let paypalId;
 
     Paypal.forEach((element) => {
-      console.log(element);
       if (element.id === parseInt(changeEvent.target.value, 10)) {
         paypalId = element.paypalId;
       }
