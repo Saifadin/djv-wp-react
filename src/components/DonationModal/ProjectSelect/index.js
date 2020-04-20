@@ -2,20 +2,11 @@ import React from 'react';
 
 import projectSelectStyles from './ProjectSelect.scss';
 
-const ProjectSelect = ({ project, index, version, checked, onChange }) => {
+const ProjectSelect = ({ title, index, version, checked, onChange, url }) => {
   return (
-    <label className={projectSelectStyles.wrapper} htmlFor={`project-${index}-${version}`}>
-      <input
-        className={projectSelectStyles.radio}
-        type="radio"
-        value={project.id}
-        name={`donation-project-${version}`}
-        id={`project-${index}-${version}`}
-        onChange={onChange}
-        checked={checked}
-      />
-      <span className={projectSelectStyles.box}>{project.title}</span>
-    </label>
+    <a className={projectSelectStyles.wrapper} href={url} target="_blank">
+      <span className={projectSelectStyles.box}>{title}</span>
+    </a>
   );
 };
 
