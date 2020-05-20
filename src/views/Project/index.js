@@ -44,7 +44,7 @@ const Project = ({ history: { goBack }, match }) => {
         <meta property="title" content="Ramadan mit einer Spende abschließen 🌙" />
         <meta property="image" content={project.bgImage} />
         <meta property="description" content={project.content} />
-        <meta property="og:title" content="Ramadan mit einer Spende abschließen 🌙" />
+        <meta property="og:title" content={project.id === 9 ? 'Ramadan mit einer Spende abschließen 🌙' : project.title} />
         <meta property="og:image" content={project.bgImage} />
         <meta property="og:description" content={project.content} />
       </Helmet>
