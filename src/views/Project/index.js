@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 
 import Header from '../../components/Header';
@@ -38,6 +39,15 @@ const Project = ({ history: { goBack }, match }) => {
 
   return (
     <div>
+      <Helmet>
+        <title>{`${project.title} | DJV e.V. | Ihre Spende kann vieles Bewirken`}</title>
+        <meta property="title" content="Ramadan mit einer Spende abschließen 🌙" />
+        <meta property="image" content={project.bgImage} />
+        <meta property="description" content={project.content} />
+        <meta property="og:title" content="Ramadan mit einer Spende abschließen 🌙" />
+        <meta property="og:image" content={project.bgImage} />
+        <meta property="og:description" content={project.content} />
+      </Helmet>
       <PageHeader title={project.title} bgImage={project.bgImage} />
 
       <FixedHeaderAfterScroll>

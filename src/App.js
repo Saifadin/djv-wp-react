@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import Footer from './components/Footer';
 
@@ -29,6 +30,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Helmet>
+          <title>DJV e.V. | Ihre Spende kann vieles Bewirken</title>
+          <meta property="robots" content="index,follow" />
+          <meta property="keywords" content="Charity,Hilfsorganisation,Spenden,Jemen" />
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="de_DE" />
+          <meta property="og:site_name" content="DJV e.V." />
+        </Helmet>
         <Switch>
           <ScrollToTop>
             <Route exact path="/" component={Home} />
