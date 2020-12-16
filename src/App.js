@@ -11,6 +11,7 @@ import AboutUs from './views/AboutUs';
 import Impressum from './views/Impressum';
 import ThankYou from './views/ThankYou';
 import Donate from './views/Donate';
+import DontaionFormPage from './views/DonationForm';
 
 class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
@@ -47,6 +48,7 @@ class App extends Component {
             <Route path="/projekt/:id" component={Project} />
             <Route path="/impressum" component={Impressum} />
             <Route path="/danke" component={ThankYou} />
+            <Route path="/spendenbescheinigung" component={DontaionFormPage} />
           </ScrollToTop>
         </Switch>
         <Footer />

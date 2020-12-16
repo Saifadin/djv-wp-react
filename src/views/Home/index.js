@@ -5,7 +5,6 @@ import Header from '../../components/Header';
 import PageSection from '../../components/PageSection';
 import ProjectCategory from '../../components/ProjectCategory';
 import ProjectContainer from '../../components/ProjectContainer';
-import ProjectSelect from '../../components/DonationModal/ProjectSelect';
 import CTAButton from '../../components/CTAButton';
 import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll';
 import homeStyles from './Home.scss';
@@ -37,22 +36,7 @@ const Home = () => {
       <FixedHeaderAfterScroll>
         <Header />
       </FixedHeaderAfterScroll>
-      <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" bgImagePosition="right" title="Kurban 2020">
-        <div className="textRow">
-          <p className="paragraph">
-            Jährlich zum Opferfest, welches direkt nach der Pilgerfahrt stattfindet, sind Muslime dazu verpflichtet ein Opfer (Kurban) zu
-            bringen. Dies wird als Erinnerung an die Geschichte von Abraham und Ismail gemacht. Dieses Opfer soll mindestens zu einem
-            Drittel an Bedürftige verteilt werden.
-          </p>
-          <p className="paragraph">
-            Wenn Sie Ihr Kurban für die Menschen im Jemen geben wollen, spenden Sie an uns und setzen Sie sich mit uns in Verbindung. Wir
-            haben Partner vor Ort, die bereit sind so viele Menschen, wie möglich mit Fleisch zu versorgen.
-          </p>
-          <ProjectSelect title="Jetzt spenden" url="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2R2YFCRMF5ALS" />
-        </div>
-        <div className="textRow">
-          <img src="/assets/Kurban-plakat.jpeg" alt="Kurban Projekt" className={homeStyles.image} />
-        </div>
+      <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" bgImagePosition="right" title="Unterstütze uns in 2021">
         <DonateBox version="Donation1" />
       </PageSection>
       <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" title="Über Uns">
