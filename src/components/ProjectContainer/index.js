@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
+import { Paypal } from '../../projects';
 import ProjectRow from '../ProjectRow';
-import { serverUrl } from '../../server';
 
 const ProjectContainer = ({ category, title, maxCount }) => {
   const [projects, setProjects] = useState([]);
@@ -12,7 +11,7 @@ const ProjectContainer = ({ category, title, maxCount }) => {
       let preparedProject = {
         id,
         title,
-        bgImage: image && image[0] && image[0].url,
+        image,
         description: subTitle,
       };
       return preparedProject;
@@ -21,9 +20,8 @@ const ProjectContainer = ({ category, title, maxCount }) => {
   };
 
   useEffect(() => {
-    axios.get(`${serverUrl}/projects?type=${category}`).then(({ data }) => {
-      prepareProjects(data);
-    });
+    const project = Paypal.filter(({ type }) => type === category);
+    prepareProjects(project);
   }, []);
   return projects.length > 0 && <ProjectRow title={title} projects={projects} maxCount={maxCount} />;
 };

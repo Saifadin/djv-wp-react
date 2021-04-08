@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 import { Paypal } from '../../projects';
-import { serverUrl } from '../../server';
 import ProjectSelect from '../DonationModal/ProjectSelect';
 import donationModalStyles from './DonationBox.scss';
 
@@ -28,9 +26,8 @@ const DonateBox = ({ version = 1 }) => {
   const fetchProjects = () => {
     const categoryIds = ['active', 'permanent'];
     categoryIds.forEach((id) => {
-      axios.get(`${serverUrl}/projects?type=${id}`).then(({ data }) => {
-        prepareProjects(data, id);
-      });
+      const project = Paypal.filter(({ type }) => type === id);
+      prepareProjects(project, id);
     });
   };
 
