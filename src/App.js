@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 
 import Home from './views/Home';
 import Projects from './views/Projects';
+import Ramadan from './views/Ramadan';
 import Project from './views/Project';
 import AboutUs from './views/AboutUs';
 import Impressum from './views/Impressum';
@@ -43,6 +44,7 @@ class App extends Component {
           <ScrollToTop>
             <Route exact path="/" component={Home} />
             <Route path="/projekte" component={Projects} />
+            <Route path="/ramadan" component={Ramadan} />
             <Route path="/spenden" component={Donate} />
             <Route path="/ueber-uns" component={AboutUs} />
             <Route path="/projekt/:id" component={Project} />

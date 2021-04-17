@@ -78,8 +78,8 @@ const Home = () => {
           <ProjectCategory title="Waisenpatenschaften" iconName="orphan" />
         </div>
 
-        <ProjectContainer title="Aktive Projekte" maxCount={4} category="active" />
-        <ProjectContainer title="Permanente Projekte" maxCount={4} category="permanent" />
+        <ProjectContainer title="Aktive Projekte" maxCount={5} category="active" />
+        <ProjectContainer title="Permanente Projekte" maxCount={5} category="permanent" />
 
         <DonateBox version="Donation2" />
       </PageSection>

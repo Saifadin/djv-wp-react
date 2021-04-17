@@ -12,7 +12,7 @@ const Footer = () => {
         <ContactElement iconName="address-book-o">
           <b>Adresse</b>
           <br />
-          MArtin-Opitz Str. 25
+          Martin-Opitz-Str. 25
           <br />
           13357 Berlin
         </ContactElement>

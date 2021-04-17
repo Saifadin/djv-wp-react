@@ -9,6 +9,7 @@ const Header = () => {
   const [mobileMenuHidden, setMobileMenuHidden] = useState(true);
   const navList = [
     { link: '/projekte', title: 'Projekte' },
+    { link: '/ramadan', title: 'Ramadan' },
     { link: '/ueber-uns', title: 'Über Uns' },
     { link: '/spenden', title: 'Spenden' },
   ];
