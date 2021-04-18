@@ -16,7 +16,7 @@ class Ramadan extends Component {
         <PageHeader title="Ramadan Projekte" bgImage="/assets/shibam-yemen.jpg" />
 
         <FixedHeaderAfterScroll>
-          <Header />
+          <Header tag="ramadan" modalTitle="Deine Ramadan-Spende" />
         </FixedHeaderAfterScroll>
 
         <PageSection title="Aktive Ramadan Projekte">

@@ -5,7 +5,7 @@ import uniqId from 'uniqid';
 import HeaderDonationButton from '../HeaderDonationButton';
 import headerStyles from './Header.scss';
 
-const Header = () => {
+const Header = ({ tag = '', modalTitle = '' }) => {
   const [mobileMenuHidden, setMobileMenuHidden] = useState(true);
   const navList = [
     { link: '/projekte', title: 'Projekte' },
@@ -43,7 +43,7 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <HeaderDonationButton />
+        <HeaderDonationButton tag={tag} modalTitle={modalTitle} />
       </div>
     </header>
   );

@@ -4,7 +4,7 @@ import { Paypal } from '../../projects';
 import ProjectSelect from '../DonationModal/ProjectSelect';
 import donationModalStyles from './DonationBox.scss';
 
-const DonateBox = ({ version = 1 }) => {
+const DonateBox = ({ version = 1, tag, modalTitle }) => {
   const [activeProjects, setActiveProjects] = useState([]);
   const [permaProjects, setPermaProjects] = useState([]);
 
@@ -16,19 +16,29 @@ const DonateBox = ({ version = 1 }) => {
       };
       return preparedProject;
     });
-    if (id === 'active') {
+    if (tag) {
       setActiveProjects(projects);
-    } else if (id === 'permanent') {
-      setPermaProjects(projects);
+      setPermaProjects([]);
+    } else {
+      if (id === 'active') {
+        setActiveProjects(projects);
+      } else if (id === 'permanent') {
+        setPermaProjects(projects);
+      }
     }
   };
 
   const fetchProjects = () => {
     const categoryIds = ['active', 'permanent'];
-    categoryIds.forEach((id) => {
-      const project = Paypal.filter(({ type }) => type === id);
-      prepareProjects(project, id);
-    });
+    if (tag) {
+      const project = Paypal.filter(({ tags }) => tags.includes(tag));
+      prepareProjects(project, '');
+    } else {
+      categoryIds.forEach((id) => {
+        const project = Paypal.filter(({ type }) => type === id);
+        prepareProjects(project, id);
+      });
+    }
   };
 
   useEffect(() => {
@@ -37,7 +47,7 @@ const DonateBox = ({ version = 1 }) => {
 
   return (
     <div className={donationModalStyles.wrapper}>
-      <h2 className={donationModalStyles.headline}>Ganz einfach spenden:</h2>
+      <h2 className={donationModalStyles.headline}>{modalTitle || 'Ganz einfach spenden:'}</h2>
       <h3 className={donationModalStyles.stepHeadline}>Wähle den Spendenzweck aus und bezahl mit Paypal!</h3>
       <div className={donationModalStyles.projects}>
         {activeProjects.map((project) => {

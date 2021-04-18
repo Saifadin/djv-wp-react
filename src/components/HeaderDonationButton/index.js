@@ -1,19 +1,26 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useLayoutEffect, useState } from 'react';
 
 import ModalContext from '../../contexts/ModalContext';
 import DonationModal from '../DonationModal';
 import buttonStyles from './HeaderDonationButton.scss';
 
-const HeaderDonationButton = () => {
+const HeaderDonationButton = ({ tag = '', modalTitle = '' }) => {
   const [isVisible, setIsVisible] = useState(false);
   const { toggleModal, visibleModal } = useContext(ModalContext);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (window.innerWidth < 601) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
     const scrollHandler = (e) => {
       const bodyScrollHeight = e.target.scrollingElement.scrollTop;
-      if (window.innerWidth < 601 && bodyScrollHeight < 600) {
+      if (window.innerWidth < 601 && bodyScrollHeight < 200) {
+        console.log(1);
         setIsVisible(false);
       } else {
+        console.log(2);
         setIsVisible(true);
       }
     };
@@ -35,7 +42,7 @@ const HeaderDonationButton = () => {
       <button key="button" className={isVisible ? buttonStyles.donationButton : buttonStyles.hideButton} onClick={openDonationModal}>
         <span>Jetzt Spenden</span>
       </button>
-      <DonationModal key="modal" isOpen={visibleModal === 'donation'} onCloseModal={closeDonationModal} />
+      <DonationModal key="modal" isOpen={visibleModal === 'donation'} onCloseModal={closeDonationModal} tag={tag} modalTitle={modalTitle} />
     </React.Fragment>
   );
 };
