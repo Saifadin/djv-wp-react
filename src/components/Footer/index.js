@@ -53,7 +53,7 @@ const Footer = () => {
         </ContactElement>
       </div>
       <span className={footerStyles.copyright}>
-        © DJV e.V. 2020 |{' '}
+        © DJV e.V. 2021 |{' '}
         <Link to="/impressum" className={footerStyles.copyrightLink}>
           Impressum
         </Link>
