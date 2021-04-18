@@ -19,6 +19,10 @@ class Ramadan extends Component {
           <Header />
         </FixedHeaderAfterScroll>
 
+        <PageSection title="Aktive Ramadan Projekte">
+          <ProjectContainer tag="ramadan" />
+        </PageSection>
+
         <PageSection title="Unsere Arbeit">
           <div className={projectStyles.projectCategories}>
             <ProjectCategory title="Nahrungsmittelhilfe" iconName="food" />
@@ -39,10 +43,6 @@ class Ramadan extends Component {
               ankommt, da wir auf Ehrenamts-Basis arbeiten.
             </p>
           </div>
-        </PageSection>
-
-        <PageSection title="Aktive Ramadan Projekte">
-          <ProjectContainer tag="ramadan" />
         </PageSection>
       </div>
     );
