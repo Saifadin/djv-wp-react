@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import ReactPixel from 'react-facebook-pixel';
 
 import Footer from './components/Footer';
 
@@ -17,6 +18,7 @@ import DontaionFormPage from './views/DonationForm';
 class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
+      ReactPixel.pageView();
       window.scrollTo(0, 0);
     }
   }
@@ -29,6 +31,10 @@ class ScrollToTop extends Component {
 withRouter(ScrollToTop);
 
 const App = () => {
+  useEffect(() => {
+    ReactPixel.init('351579262228846');
+  }, []);
+
   return (
     <div className="App">
       <Helmet>

@@ -21,6 +21,9 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>DJV e.V. | Ihre Spende kann vieles Bewirken</title>
+  </head>
+  <body>
+    <!-- Facebook Pixel Code -->
     <script>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -38,12 +41,13 @@
         s = b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t, s);
       })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
       fbq('init', '351579262228846');
       fbq('track', 'PageView');
     </script>
-  </head>
-  <body>
+    <noscript>
+      <img height="1" width="1" style="display: none" src="https://www.facebook.com/tr?id=351579262228846&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
     <noscript> You need to enable JavaScript to run this website. </noscript>
 
     <form name="spendenbescheinigung" netlify hidden>
