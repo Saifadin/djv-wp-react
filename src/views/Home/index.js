@@ -36,7 +36,7 @@ const Home = () => {
       <FixedHeaderAfterScroll>
         <Header />
       </FixedHeaderAfterScroll>
-      <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" bgImagePosition="right" title="Unterstütze uns in 2021">
+      <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" bgImagePosition="right" title="Unterstütze uns jetzt">
         <DonateBox version="Donation1" />
       </PageSection>
       <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" title="Über Uns">
@@ -79,7 +79,7 @@ const Home = () => {
         </div>
 
         <ProjectContainer title="Aktive Projekte" maxCount={5} category="active" />
-        <ProjectContainer title="Permanente Projekte" maxCount={5} category="permanent" />
+        <ProjectContainer title="Permanente Projekte" maxCount={6} category="permanent" />
 
         <DonateBox version="Donation2" />
       </PageSection>

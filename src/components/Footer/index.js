@@ -30,9 +30,7 @@ const Footer = () => {
         <ContactElement iconName="phone">
           <b>Telefon</b>
           <br />
-          0176 341 263 24
-          <br />
-          0178 239 9122
+          030 9151 6950
         </ContactElement>
         <ContactElement iconName="university">
           <b>Spendenkonto</b>
