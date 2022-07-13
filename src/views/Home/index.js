@@ -63,13 +63,16 @@ const Home = () => {
             Hinweis: Die Brüder und Schwestern, die eine Dokumentation für die Durchführung des Kurbans erhalten möchten, können sich bei
             uns melden und uns ihre Whatsapp-Nummer oder Email schciekn, dann wird ihnen das zugeschickt.
           </p>
-          <p className="paragraph">
-            Für weitere Informationen über die Projekte des Vereins, bitten wir Sie unsere Seite auf Facebook zu besuchen:
-            <br />
-            <a href="https://www.facebook.com/deutschjemenitischer.verein" target="_blank" rel="noopener noreferrer">
-              https://www.facebook.com/deutschjemenitischer.verein
-            </a>
-          </p>
+        </div>
+      </PageSection>
+      <PageSection fullWidth={true}>
+        <div className={homeStyles.imageGrid}>
+          <img src="/assets/kurban1.jpeg" alt="Kurban Bilder" />
+          <img src="/assets/kurban2.jpeg" alt="Kurban Bilder" />
+          <img src="/assets/kurban3.jpeg" alt="Kurban Bilder" />
+          <img src="/assets/kurban4.jpeg" alt="Kurban Bilder" />
+          <img src="/assets/kurban5.jpeg" alt="Kurban Bilder" />
+          <img src="/assets/kurban6.jpeg" alt="Kurban Bilder" />
         </div>
       </PageSection>
       <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" bgImagePosition="right" title="Unterstütze uns jetzt">

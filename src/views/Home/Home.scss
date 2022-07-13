@@ -95,3 +95,17 @@
   height: auto;
   margin-bottom: 60px;
 }
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  margin-top: -80px;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  & img {
+    width: 100%;
+  }
+}
