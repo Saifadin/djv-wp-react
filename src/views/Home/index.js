@@ -36,6 +36,42 @@ const Home = () => {
       <FixedHeaderAfterScroll>
         <Header />
       </FixedHeaderAfterScroll>
+      <PageSection fullWidth={true} title="Kurban-Projekt 2022" bgImage="/assets/shibam-yemen.jpg">
+        <div className="textRow">
+          <p className="paragraph">
+            Mit Allahs Erlaubnis hat die DJV, am Dienstag, den 12.Juli.2022, alle Phasen des Kurban-Projekts für das Jahr 2022 in mehreren
+            jemenitischen Provinzen abgeschlossen. Zudem wurden alle Opfer, die zum Verein ankamen, zum richtigen Zeitpunkt durchgeführt.
+          </p>
+          <p className="paragraph">
+            Dieses Projekt wurde in den Provinzen Lahj, Ma'rib, Ta'iz, Hadramout und Sana'a durchgeführt. Der Verein setzte den Fokus auf
+            arme Familien in den genannten Provinzen. Arme Familien in den Flüchtlingslagern hatten Vorang. Die Anzahl der Opfergaben, die
+            vollzogen wurden, waren 300, womit ca. 2200 arme Familien ernährt wurden.
+          </p>
+          <p className="paragraph">
+            Ziel des Projektes war, die Reduzierung des menschlichen Leidens, womit viele in der jemenitischen Bevölkerung zu kämpfen haben.
+            Das liegt an den Lebensumständen, der wirtschaftlichen Verschlechterung und der Verbreitung der Arbeitslosigkeit und Armut.
+          </p>
+          <p className="paragraph">
+            Die DJV bedankt sich sehr für alle unterstützenden Brüder und Schwestern, die dieses Projekt mit Geld oder Anstrengung
+            unterstützt haben.
+          </p>
+          <p className="paragraph">
+            Und wir bitten Allah dass er von allen ihren Einsatz, Aufwand und Mühe annimmt und ihnen diese Taten in der Waage der guten
+            Taten zuschreibt.
+          </p>
+          <p className="paragraph">
+            Hinweis: Die Brüder und Schwestern, die eine Dokumentation für die Durchführung des Kurbans erhalten möchten, können sich bei
+            uns melden und uns ihre Whatsapp-Nummer oder Email schciekn, dann wird ihnen das zugeschickt.
+          </p>
+          <p className="paragraph">
+            Für weitere Informationen über die Projekte des Vereins, bitten wir Sie unsere Seite auf Facebook zu besuchen:
+            <br />
+            <a href="https://www.facebook.com/deutschjemenitischer.verein" target="_blank" rel="noopener noreferrer">
+              https://www.facebook.com/deutschjemenitischer.verein
+            </a>
+          </p>
+        </div>
+      </PageSection>
       <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" bgImagePosition="right" title="Unterstütze uns jetzt">
         <DonateBox version="Donation1" />
       </PageSection>
