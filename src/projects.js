@@ -6,7 +6,7 @@ export const Paypal = [
     subTitle: 'Pakete um die wachsende Hungersnot zu bekämpfen"',
     text: 'Während der anhaltenden Hungersnot im Jemen gibt es eine steigende Nachfrage nach Lebensmittel in weiten Teilen des Landes. Menschen aus jedem Alter, allen Schichten, beiden Geschlechtern und verschiedenen religiösen Überzeugungen leiden unter den anhaltenden Strapazen, welche der Krieg auf die lokale Agrarwirtschaft verursacht hat.\n\nIn regelmäßigen Projekten versorgen wir mit Hilfe unserer Partner vor Ort Lebensmittelpakete verschiedenen Inhalts, welche manchen Familien mehrere Wochen helfen können. Über die letzten Jahre konnten wir mehr als 1500 Pakete jährlich verteilen und damit vielen Jemeniten dabei geholfen zu überleben.\n\nMit Ihrer Spende können Sie uns dabei unterstützen noch mehr hungernden Jemeniten eine Überlebenschance zu ermöglichen.',
     type: 'active',
-    tags: ['ramadan'],
+    tags: ['ramadan', 'quick'],
     image: '/assets/Lebensmittelpakete.jpeg',
   },
   {
@@ -56,7 +56,7 @@ export const Paypal = [
     subTitle: 'Waisenkinder im Jemen brauchen Ihre Hilfe',
     text: 'Die größten Opfer jeden Krieges sind Kinder, vor allem die Kinder, die Ihre Eltern verloren haben und auf sich alleine gestellt sind. Manchmal müssen sie sich sogar um kleinere Geschwister mitkümmern. Seit Beginn des Krieges sind zu viele Kinder zu Waisenkinder geworden, als dass man sie alle zählen kann. Das ist Grund genug, dass wir große Teile unserer Ressourcen darin investieren Waisenkinder zu finden und sie langfristig zu unterstützen.\n\nWir sehen das als unsere Pflicht an, diesen Kinder eine Zukunft zu geben und ihnen zu helfen dieses Trauma zu überstehen. Unsere Programme mit unseren Partnern unterstützen diese Waisenkinder darin Bildung zu finden, soziale Projekte zu besuchen und eine gesunde Ernährung zu erhalten.\n\nWaisenkinder brauchen sehr viel Aufmerksamkeit und viel Verständnis. Das möchten wir den Kindern anbieten und wenn Sie uns dabei unterstützen wollen, dann können Sie über den Spendenknopf einen kleinen Beitrag spenden, der direkt an diese Kinder geht.',
     type: 'active',
-    tags: [],
+    tags: ['quick'],
     image: '/assets/Waisenpatenschaft.jpeg',
   },
   {
@@ -66,7 +66,7 @@ export const Paypal = [
     subTitle: 'Verletzte im Krieg müssen versorgt werden, aber die Ausrüstung fehlt"',
     text: 'Während des Krieges im Jemen fehlt es an allen Ecken und Kanten an medizinischer Versorgung. Die meisten Verletzten sterben an den Folgen ihrer Verletzungen, weil sie nicht ordentlich versorgt werden können. Krankenhäuser sind zerstört, Ärzte und Krankenpfleger tot und die Ausrüstungen sind zerstört.\n\nWir versuchen die lokalen Krankenhäuser mit Medikamenten und Ausrüstungen zu versorgen. Das ist jedoch ein sehr kostspieliges Vorhaben. Hier können Sie uns mit Ihrer Spende unterstützen.',
     type: 'permanent',
-    tags: [],
+    tags: ['quick'],
     image: '/assets/Medical.jpeg',
   },
   {
@@ -96,7 +96,7 @@ export const Paypal = [
     subTitle: 'Bildung ist der Grundpfeiler jeder stabilen Gesellschaft',
     text: 'In den letzten Jahren haben wir es geschafft viele Kinder mit Schulmaterialien zu erreichen. Die Erziehung und die Bildung von Kindern und Jugendlichen ist der Grundpfeiler auf dem alle gesellschaftlichen Entwicklungen basieren.\n\nUmso mehr liegt es uns am Herzen, das Kinder die Möglichkeit haben die Schule zu besuchen. Hierfür sammeln wir regelmäßig Spenden ein, um Schulmaterialien, -bücher und -taschen zu kaufen und zu verteilen.\n\nWenn Sie jemenitischen Kindern helfen wollen, eine gesunde Bildung zu erhalten, dann Spenden Sie mit einer Banküberweisung auf die unten angegebene Bankverbindung oder kostenfrei über Paypal über den Spenden-Knopf.',
     type: 'permanent',
-    tags: [],
+    tags: ['quick'],
     image: '/assets/Schule.jpeg',
   },
   {
@@ -106,7 +106,7 @@ export const Paypal = [
     subTitle: 'Eine fortlaufende Spende, mit jedem Tropfen Wasser',
     text: 'Wenn Sie helfen wollen, Menschen sauberes Wasser zu ermöglichen, dann Spenden Sie mit einer Banküberweisung auf die unten angegebene Bankverbindung oder kostenfrei über Paypal über den Spenden-Knopf.',
     type: 'permanent',
-    tags: [],
+    tags: ['quick'],
     image: '/assets/Water.jpeg',
   },
 ];

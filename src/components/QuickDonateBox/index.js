@@ -4,7 +4,7 @@ import { Paypal } from '../../projects';
 import ProjectSelect from '../DonationModal/ProjectSelect';
 import donationModalStyles from './DonationBox.scss';
 
-const QuickDonateBox = ({ version = 1, tag, modalTitle }) => {
+const DonateBox = ({ version = 1, tag, modalTitle }) => {
   const [activeProjects, setActiveProjects] = useState([]);
   const [permaProjects, setPermaProjects] = useState([]);
 
@@ -77,4 +77,4 @@ const QuickDonateBox = ({ version = 1, tag, modalTitle }) => {
   );
 };
 
-export default QuickDonateBox;
+export default DonateBox;

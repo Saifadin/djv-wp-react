@@ -12,7 +12,7 @@ import Project from './views/Project';
 import AboutUs from './views/AboutUs';
 import Impressum from './views/Impressum';
 import ThankYou from './views/ThankYou';
-import Donate from './views/Donate';
+import QuickDonate from './views/QuickDonate';
 import DontaionFormPage from './views/DonationForm';
 
 class ScrollToTop extends Component {
@@ -50,7 +50,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/projekte" component={Projects} />
           <Route path="/ramadan" component={Ramadan} />
-          <Route path="/spenden" component={Donate} />
+          <Route path="/spenden" component={QuickDonate} />
           <Route path="/ueber-uns" component={AboutUs} />
           <Route path="/projekt/:id" component={Project} />
           <Route path="/impressum" component={Impressum} />

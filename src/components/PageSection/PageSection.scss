@@ -5,6 +5,14 @@
   position: relative;
 }
 
+.minSection {
+  composes: row from global;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  padding: 80px 24px;
+}
+
 .fullWidth {
   composes: section;
   width: 100vw;
