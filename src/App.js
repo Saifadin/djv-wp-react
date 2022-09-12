@@ -13,6 +13,7 @@ import AboutUs from './views/AboutUs';
 import Impressum from './views/Impressum';
 import ThankYou from './views/ThankYou';
 import QuickDonate from './views/QuickDonate';
+import Donate from './views/Donate2';
 import DontaionFormPage from './views/DonationForm';
 
 class ScrollToTop extends Component {
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/projekte" component={Projects} />
           <Route path="/ramadan" component={Ramadan} />
           <Route path="/spenden" component={QuickDonate} />
+          <Route path="/spenden-alle" component={Donate} />
           <Route path="/ueber-uns" component={AboutUs} />
           <Route path="/projekt/:id" component={Project} />
           <Route path="/impressum" component={Impressum} />
