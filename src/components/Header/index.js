@@ -11,7 +11,7 @@ const Header = ({ tag = '', modalTitle = '' }) => {
     { link: '/projekte', title: 'Projekte' },
     { link: '/ramadan', title: 'Ramadan' },
     { link: '/ueber-uns', title: 'Über Uns' },
-    { link: '/spenden', title: 'Spenden' },
+    { link: '/spenden-alle', title: 'Spenden' },
   ];
 
   useEffect(() => {
