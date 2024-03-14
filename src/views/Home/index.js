@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import PageSection from '../../components/PageSection';
 import ProjectCategory from '../../components/ProjectCategory';
 import ProjectContainer from '../../components/ProjectContainer';
-import CTAButton from '../../components/CTAButton';
+// import CTAButton from '../../components/CTAButton';
 import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll';
 import homeStyles from './Home.scss';
 import DonateBox from '../../components/DonateBox';
