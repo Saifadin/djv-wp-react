@@ -17,10 +17,8 @@ const HeaderDonationButton = ({ tag = '', modalTitle = '' }) => {
     const scrollHandler = (e) => {
       const bodyScrollHeight = e.target.scrollingElement.scrollTop;
       if (window.innerWidth < 601 && bodyScrollHeight < 200) {
-        console.log(1);
         setIsVisible(false);
       } else {
-        console.log(2);
         setIsVisible(true);
       }
     };

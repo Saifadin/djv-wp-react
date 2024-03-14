@@ -10,6 +10,8 @@ import FixedHeaderAfterScroll from '../../components/FixedHeaderAfterScroll';
 import homeStyles from './Home.scss';
 import DonateBox from '../../components/DonateBox';
 
+import projectStyles from '../Ramadan/Ramadan.scss';
+
 const Home = () => {
   const { toggleModal } = useContext(ModalContext);
 
@@ -36,7 +38,7 @@ const Home = () => {
       <FixedHeaderAfterScroll>
         <Header />
       </FixedHeaderAfterScroll>
-      <PageSection fullWidth={true} title="Kurban-Projekt 2022" bgImage="/assets/shibam-yemen.jpg">
+      {/* <PageSection fullWidth={true} title="Kurban-Projekt 2022" bgImage="/assets/shibam-yemen.jpg">
         <div className="textRow">
           <p className="paragraph">
             Mit Allahs Erlaubnis hat die DJV, am Dienstag, den 12.Juli.2022, alle Phasen des Kurban-Projekts für das Jahr 2022 in mehreren
@@ -74,11 +76,38 @@ const Home = () => {
           <img src="/assets/kurban5.jpeg" alt="Kurban Bilder" />
           <img src="/assets/kurban6.jpeg" alt="Kurban Bilder" />
         </div>
+      </PageSection> */}
+
+      <PageSection title="Aktive Ramadan Projekte" min>
+        <ProjectContainer tag="ramadan" />
       </PageSection>
+
+      <PageSection title="Unsere Arbeit" min>
+        <div className={projectStyles.projectCategories}>
+          <ProjectCategory title="Nahrungsmittelhilfe" iconName="food" />
+          <ProjectCategory title="Erste-Hilfe-Kampagnen" iconName="aid" />
+          <ProjectCategory title="Medizinische Versorgung vor Ort" iconName="yemen" />
+          <ProjectCategory title="Waisenpatenschaften" iconName="orphan" />
+        </div>
+        <div className="textRow">
+          <p className="paragraph">
+            Seit 2013 bemüht sich der DJV e.V. darum, die Lage der jemenitischen Bevölkerung in Kriegszeiten zu verbessern. Dies wird
+            hauptsächlich mit Projekten umgesetzt, die zeitaktuell sind und dringend benötigt werden, zum Beispiel als das Dengue-Fieber im
+            Jemen ausbrach. In Kooperation mit diversen Vereinen wurden Spenden für Medikamente und medizinische Ausrüstungen gesammelt.
+          </p>
+          <p className="paragraph">
+            Mit Ihrer Unterstützung können wir noch bessere Unterstützung für die jemenitische Bevölkerung garantieren. Jede Spende hilft
+            uns dabei, noch mehr Menschen zu erreichen und weitere Partner zu gewinnen. Wir garantieren Ihnen, dass Ihre Spende im Jemen
+            ankommt, da wir auf Ehrenamts-Basis arbeiten.
+          </p>
+        </div>
+      </PageSection>
+
       <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" bgImagePosition="right" title="Unterstütze uns jetzt">
         <DonateBox version="Donation1" />
       </PageSection>
-      <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" title="Über Uns">
+
+      {/* <PageSection fullWidth={true} bgImage="/assets/oldcity.jpg" title="Über Uns">
         <div className="textRow">
           <p className="paragraph">
             Der Deutsch-Jemenitische Verein für Hilfe und Entwicklung ist ein ehrenamtlicher Gesellschaftsverein, der 2013 offiziell in
@@ -91,8 +120,9 @@ const Home = () => {
           </p>
         </div>
         <CTAButton title="Mehr Über Uns" url="/ueber-uns" />
-      </PageSection>
-      <PageSection fullWidth={true} bgImage="/assets/kinder-jemen.jpg" bgImagePosition="right" title="Ziele">
+      </PageSection> */}
+
+      {/* <PageSection fullWidth={true} bgImage="/assets/kinder-jemen.jpg" bgImagePosition="right" title="Ziele">
         <div className="textRow">
           <p className="paragraph">
             Die Minderung der schwierigen Umstände der jemenitischen Bevölkerung, sowie die Zusicherung der humanitären Hilfen in allen
@@ -108,8 +138,9 @@ const Home = () => {
             </button>
           </div>
         </div>
-      </PageSection>
-      <PageSection title="Projekte">
+      </PageSection> */}
+
+      {/* <PageSection title="Projekte">
         <div className={homeStyles.projectCategories}>
           <ProjectCategory title="Nahrungsmittelhilfe" iconName="food" />
           <ProjectCategory title="Erste-Hilfe-Kampagnen" iconName="aid" />
@@ -121,7 +152,7 @@ const Home = () => {
         <ProjectContainer title="Permanente Projekte" maxCount={6} category="permanent" />
 
         <DonateBox version="Donation2" />
-      </PageSection>
+      </PageSection> */}
     </div>
   );
 };
